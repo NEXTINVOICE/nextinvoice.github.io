@@ -1,0 +1,11 @@
+.design-sets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .design-type {
+        &::after {
+            content: 'apply' !important;
+        }
+    }
+    
+}

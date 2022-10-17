@@ -4,6 +4,7 @@ import { getProfiles } from "../../operations/localProfile";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/slicers/profile";
+import { setSellers } from "../../redux/slicers/sellers";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -54,6 +55,7 @@ export default function Login() {
       }
 
       dispatch(login({ user: profile.user, password: profile.password }));
+      dispatch(setSellers(profile.data));
       navigate("/dashboard");
     }
   };

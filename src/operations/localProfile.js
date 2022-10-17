@@ -10,6 +10,10 @@ export const getProfiles = () => {
   }
 };
 
+export const saveProfiles = (data) => {
+  localStorage.setItem("nxtInvProfiles", JSON.stringify(data));
+};
+
 export const setProfile = (data) => {
   let profiles = JSON.parse(localStorage.getItem("nxtInvProfiles"));
   if (!profiles) {

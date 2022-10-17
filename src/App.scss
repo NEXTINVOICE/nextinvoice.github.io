@@ -1,0 +1,20 @@
+.disabled {
+    opacity: .5;
+    pointer-events: none;
+    user-select: none;
+}
+
+.modal {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.76);
+    display: grid;
+    place-content: center;
+
+    .modal-cont {
+        background: white;
+        min-width: 70vw;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+}
