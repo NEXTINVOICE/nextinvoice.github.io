@@ -17,8 +17,20 @@ const sellers = createSlice({
         ...state.slice(action.payload + 1),
       ];
     },
+    replaceSeller: (state, action) => {
+      let currIndex = state
+        .map((item) => item.name)
+        .indexOf(action.payload.name);
+
+      return [
+        ...state.slice(0, currIndex),
+        action.payload.data,
+        ...state.slice(currIndex + 1),
+      ];
+    },
   },
 });
 
-export const { setSellers, createSeller, deleteSeller } = sellers.actions;
+export const { setSellers, createSeller, deleteSeller, replaceSeller } =
+  sellers.actions;
 export default sellers.reducer;

@@ -8,6 +8,7 @@ import CreateProfile from "./pages/offauth/CreateProfile";
 import Login from "./pages/offauth/Login";
 import "./App.scss";
 import Sellers from "./pages/core/Sellers";
+import EditSeller from "./pages/core/EditSeller";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="seller/create" element={<CreateSeller />} />
+            <Route path="seller/edit" element={<EditSeller />} />
             <Route path="sellers" element={<Sellers />} />
           </Route>
         </Routes>

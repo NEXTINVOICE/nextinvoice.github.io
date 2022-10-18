@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import DeleteSellerModal from "../../components/DeleteSellerModal";
+import { selectSeller } from "../../redux/slicers/seller";
 
 export default function Sellers() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const sellers = useSelector((store) => store.sellers);
   const [showSellerModal, setShowSellerModal] = useState(false);
   const [currIndex, setIndex] = useState(0);
@@ -15,6 +19,14 @@ export default function Sellers() {
           <h3>{item.name}</h3>
           <p>{item.address}</p>
           <div>
+            <button
+              onClick={() => {
+                dispatch(selectSeller(item));
+                navigate("/dashboard/seller/edit");
+              }}
+            >
+              Edit
+            </button>
             <button
               onClick={() => {
                 setIndex(index);
