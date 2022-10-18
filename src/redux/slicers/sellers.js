@@ -11,7 +11,12 @@ const sellers = createSlice({
       state.push(action.payload);
       return state;
     },
-    deleteSeller: () => 0,
+    deleteSeller: (state, action) => {
+      return [
+        ...state.slice(0, action.payload),
+        ...state.slice(action.payload + 1),
+      ];
+    },
   },
 });
 
