@@ -7,11 +7,8 @@ const profile = createSlice({
     pass: null,
   },
   reducers: {
-    login: (state, action) => {
-      console.log("dispatching");
-      return action.payload;
-    },
-    logout: (state, action) => ({ user: null, pass: null }),
+    login: (state, action) => action.payload,
+    logout: (state) => ({ user: null, pass: null }),
   },
 });
 

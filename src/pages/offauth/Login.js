@@ -46,7 +46,6 @@ export default function Login() {
       setUsernameErr("Username doesn't exists");
       return;
     } else {
-      console.log(profile);
       const hashPass = sha256(currPassword).toString();
 
       if (profile.password !== hashPass) {
