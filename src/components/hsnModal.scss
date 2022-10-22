@@ -1,0 +1,26 @@
+.hsnList {
+    height: 15rem;
+    overflow: hidden;
+    overflow-y: auto;
+
+    position: relative;
+
+    & > div:first-child {
+        position: sticky;
+        top: 0;
+        background: white;
+
+        &:hover {
+            background: white;
+        }
+    }
+
+    & > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        cursor: pointer;
+        &:hover {
+            background: gray;
+        }
+    }
+}

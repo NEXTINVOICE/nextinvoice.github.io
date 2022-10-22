@@ -1,0 +1,985 @@
+[
+    {
+        "items": [
+            "RAKHI",
+            "RAKHI THALI"
+        ],
+        "hsnCode": "2500",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "QUOTATION BOOK",
+            "SCRAP BOOK",
+            "AUTOGRAPH  BOOK",
+            "REMEMBRANCE BOOK",
+            "SLAM BOOK",
+            "RECORD  BOOK"
+        ],
+        "hsnCode": "4901",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "BOOKS & PERIODICALS"
+        ],
+        "hsnCode": "4902",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "DRAWING BOOK",
+            " Children’s picture"
+        ],
+        "hsnCode": "4903",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "BANGLES"
+        ],
+        "hsnCode": "7018",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "HANDLOOM SHAWLS",
+            "SCRAF",
+            "STOLE"
+        ],
+        "hsnCode": "8400",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "FRESH FLOWER"
+        ],
+        "hsnCode": "0600",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "INCENSE STICK"
+        ],
+        "hsnCode": "3304",
+        "gstRate": "0"
+    },
+    {
+        "items": [
+            "IMITATION JEWELLERY",
+            "CRYSTAL JEWELLERY",
+            "FASHION  JEWELLERY",
+            "BRACELET",
+            "BANDS"
+        ],
+        "hsnCode": "7117",
+        "gstRate": "3"
+    },
+    {
+        "items": [
+            "SWEETS"
+        ],
+        "hsnCode": "0404",
+        "gstRate": "5"
+    },
+    {
+        "items": [
+            "PAPER SHEET",
+            "PRINTED PAPER"
+        ],
+        "hsnCode": "4901",
+        "gstRate": "5"
+    },
+    {
+        "items": [
+            "READYMADE GARMENTS",
+            "CAPS",
+            "TIE",
+            "T-SHIRT"
+        ],
+        "hsnCode": "5208",
+        "gstRate": "5"
+    },
+    {
+        "items": [
+            "CANDLE"
+        ],
+        "hsnCode": "3406",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "BELTS"
+        ],
+        "hsnCode": "4203",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "HANGING"
+        ],
+        "hsnCode": "4421",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "TIMER"
+        ],
+        "hsnCode": "4400",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "TRAY"
+        ],
+        "hsnCode": "4400",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "BASKET"
+        ],
+        "hsnCode": "4600",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "VISITORS BOOK"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "GIFT CARD"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "PAPER PRODUCT"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "STATIONERY SET"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "QUOTATION-PAPER"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "PLANNER"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "PARTY GOODS"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "EXERCISE BOOK"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "STATIONERY"
+        ],
+        "hsnCode": "4817",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "NOTE BOOK & DAIRY"
+        ],
+        "hsnCode": "4820",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "PAPER BAG "
+        ],
+        "hsnCode": "4819",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "BOX"
+        ],
+        "hsnCode": "4819",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "GIFT BOX"
+        ],
+        "hsnCode": "4819",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "JEWELLERY BOX"
+        ],
+        "hsnCode": "4819",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "INVITATION SHEET"
+        ],
+        "hsnCode": "4909",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "POSTER"
+        ],
+        "hsnCode": "4911",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "SHAGUN ENVELOPE"
+        ],
+        "hsnCode": "4900",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "ENVELOPES"
+        ],
+        "hsnCode": "4900",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "GIFT TAG"
+        ],
+        "hsnCode": "4909",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "PLAYING CARDS "
+        ],
+        "hsnCode": "4909",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "GREETING CARD"
+        ],
+        "hsnCode": "4909",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "UNICEF CARD & CALENDERS"
+        ],
+        "hsnCode": "4910",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "CALENDER"
+        ],
+        "hsnCode": "4910",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "HEART STICK"
+        ],
+        "hsnCode": "6600",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "UMBRELLA"
+        ],
+        "hsnCode": "6601",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "KNIFE"
+        ],
+        "hsnCode": "8211",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "ADDRESS & TELEPHONE INDEX"
+        ],
+        "hsnCode": "8517",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "MOBILE ACCESSORIES"
+        ],
+        "hsnCode": "8517",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "TELEPHONE"
+        ],
+        "hsnCode": "8517",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "DOLLS"
+        ],
+        "hsnCode": "9503",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "SOFT TOY"
+        ],
+        "hsnCode": "9503",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "TOY S"
+        ],
+        "hsnCode": "9503",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "GAMES"
+        ],
+        "hsnCode": "9503",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "X-MAS SANTA "
+        ],
+        "hsnCode": "9503",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "BOOK MARK"
+        ],
+        "hsnCode": "9608",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "HAIR ACCESSORIES"
+        ],
+        "hsnCode": "9615",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "WRITING INSTRUMENTS "
+        ],
+        "hsnCode": "9608",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "RIBBON & BOWS"
+        ],
+        "hsnCode": "9701",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "HANDICRAFT ITEM"
+        ],
+        "hsnCode": "9701",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "CARD HOLDER"
+        ],
+        "hsnCode": "3926",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "LUNCH BOX"
+        ],
+        "hsnCode": "3923",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "MESSAGE PAD"
+        ],
+        "hsnCode": "3900",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "MONEY BANK"
+        ],
+        "hsnCode": "3900",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "POLYRESIN"
+        ],
+        "hsnCode": "3924",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "QUOTATION-OTHERS"
+        ],
+        "hsnCode": "3900",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "TRINKET BOX"
+        ],
+        "hsnCode": "3923",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "WALLETS"
+        ],
+        "hsnCode": "3907",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "POUCHES-OTHERS"
+        ],
+        "hsnCode": "4000",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "BAG"
+        ],
+        "hsnCode": "4202",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CLIP BOARD"
+        ],
+        "hsnCode": "4800",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "NOTE PAD HOLDER"
+        ],
+        "hsnCode": "4800",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "PASSPORT HOLDER"
+        ],
+        "hsnCode": "4800",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "NOTE PAD"
+        ],
+        "hsnCode": "4800",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "ORGANISER DIARY"
+        ],
+        "hsnCode": "4800",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "DIARY"
+        ],
+        "hsnCode": "4800",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "FILE/CLIP FOLDER"
+        ],
+        "hsnCode": "4820",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "LETTER PAD"
+        ],
+        "hsnCode": "4820",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "STAMP ALBUM"
+        ],
+        "hsnCode": "4820",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "COIN ALBUM"
+        ],
+        "hsnCode": "4820",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "PHOTO ALBUM"
+        ],
+        "hsnCode": "4820",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CERAMIC MUGS"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "TABLE SET"
+        ],
+        "hsnCode": "6911",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "ACCESSORIES"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "BOWL"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "GIFT ITEM"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "GIFT SET"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "GOD FIGURE"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "SHOW PIECE/STATUE"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "VASE"
+        ],
+        "hsnCode": "6912",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "BOTTLE"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "CANDLE STAND"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "CHARMS"
+        ],
+        "hsnCode": "7018",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "COASTER"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "COLLECTABLE"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CORK SCREW SET"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CRYSTAL SHOW PIECE"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CUFFLINK"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "CUTTER"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "DRINKING GLASS"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "GLASS ITEMS"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "GLASSWARE"
+        ],
+        "hsnCode": "7012",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "HIP FLASK"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "SUNGLASSES"
+        ],
+        "hsnCode": "7013",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "WATER BOTTLE"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "BADGE"
+        ],
+        "hsnCode": "7200",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "BUTTON BUDDIES "
+        ],
+        "hsnCode": "7200",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "OPENER"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "STEEL FINISH PRODUCTS "
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "KEY CHAINS"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "LATHER KEYCHAIN"
+        ],
+        "hsnCode": "7315",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "KITCHEN ACESSORIES"
+        ],
+        "hsnCode": "7323",
+        "gstRate": "12"
+    },
+    {
+        "items": [
+            "GOD FRAME "
+        ],
+        "hsnCode": "8306",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "PHOTOFRAME"
+        ],
+        "hsnCode": "8306",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "WIND CHIME"
+        ],
+        "hsnCode": "8306",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CALCULATOR"
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CD CASE"
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CD'S & CASSETTES"
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "ELECTRICAL GOODS "
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "HOLDER"
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "MAGNET"
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "RADIO"
+        ],
+        "hsnCode": "8500",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CLOCK"
+        ],
+        "hsnCode": "9105",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "HOLI MATERIAL"
+        ],
+        "hsnCode": "3204",
+        "gstRate": "18"
+    },
+    {
+        "items": [
+            "CHOCOLATES"
+        ],
+        "hsnCode": "1704",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "COSMETICS"
+        ],
+        "hsnCode": "3304",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "INDIAN FRAGRANCE"
+        ],
+        "hsnCode": "3300",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "MANICURE SET"
+        ],
+        "hsnCode": "3304",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "PARFUME"
+        ],
+        "hsnCode": "3307",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "BATHROOM ACESSORIES"
+        ],
+        "hsnCode": "3400",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "BALLOON"
+        ],
+        "hsnCode": "4016",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "ARTIFICAL FLOWERS"
+        ],
+        "hsnCode": "6702",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "MIRROR"
+        ],
+        "hsnCode": "7009",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "WATCHES"
+        ],
+        "hsnCode": "9101",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "WATCHES ABOVE 5000"
+        ],
+        "hsnCode": "9101",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "LAMP"
+        ],
+        "hsnCode": "9405",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "DECORATION MATERIAL"
+        ],
+        "hsnCode": "9505",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "X-MAS DECORATION"
+        ],
+        "hsnCode": "9505",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "ASHTRAY"
+        ],
+        "hsnCode": "9614",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "CIGRATE CASE"
+        ],
+        "hsnCode": "9614",
+        "gstRate": "28"
+    },
+    {
+        "items": [
+            "LIGHTER"
+        ],
+        "hsnCode": "9613",
+        "gstRate": "28"
+    }
+]

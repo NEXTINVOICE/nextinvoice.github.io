@@ -9,6 +9,7 @@ import Login from "./pages/offauth/Login";
 import "./App.scss";
 import Sellers from "./pages/core/Sellers";
 import EditSeller from "./pages/core/EditSeller";
+import CreateInvoice from "./pages/core/CreateInvoice";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="seller/create" element={<CreateSeller />} />
             <Route path="seller/edit" element={<EditSeller />} />
             <Route path="sellers" element={<Sellers />} />
+            <Route path="invoice/create" element={<CreateInvoice />} />
           </Route>
         </Routes>
       </Router>

@@ -44,7 +44,9 @@ export default function Dashboard() {
         <button onClick={() => navigate("/dashboard/seller/create")}>
           Create Seller
         </button>
-        <button>Create Invoice</button>
+        <button onClick={() => navigate("/dashboard/invoice/create")}>
+          Create Invoice
+        </button>
         <button onClick={() => navigate("/dashboard/sellers")}>Sellers</button>
       </div>
 

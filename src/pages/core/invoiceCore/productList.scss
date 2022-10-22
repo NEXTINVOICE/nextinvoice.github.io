@@ -1,0 +1,14 @@
+.productList {
+    .productListTable {
+        display: flex;
+        flex-direction: column;
+
+
+        & > div {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+
+            word-wrap: break-word;
+        }
+    }
+}

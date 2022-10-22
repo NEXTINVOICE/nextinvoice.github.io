@@ -56,3 +56,53 @@ export const sellerValidator = (data) => {
 
   return ret;
 };
+
+export const customerValidator = (data) => {
+  let ret = [];
+
+  //Validating Personal infos
+  if (data.name.trim() === "") {
+    ret.push("Name required");
+  }
+
+  if (data.address.trim() === "") {
+    ret.push("Address required");
+  }
+
+  if (!REGEX_MOB.test(data.mob)) {
+    ret.push("Invalid Mobile Number");
+  }
+
+  if (!REGEX_EMAIL.test(data.email) && data.email !== "") {
+    ret.push("Invalid Email");
+  }
+
+  return ret;
+};
+
+export const productValidator = (data) => {
+  let ret = [];
+
+  //Validating Personal infos
+  if (data.name.trim() === "") {
+    ret.push("Item Name required");
+  }
+
+  if (isNaN(parseInt(data.hsn.trim())) && data.hsn.trim() !== "") {
+    ret.push("Invalid HSN Number");
+  }
+
+  if (isNaN(parseInt(data.gst.trim()))) {
+    ret.push("Invalid GST rate");
+  }
+
+  if (isNaN(parseInt(data.qty.trim())) || parseInt(data.qty.trim()) < 1) {
+    ret.push("Invalid quantity");
+  }
+
+  if (isNaN(parseInt(data.amount.trim()))) {
+    ret.push("Invalid amount");
+  }
+
+  return ret;
+};
