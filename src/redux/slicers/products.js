@@ -20,14 +20,10 @@ const products = createSlice({
       ];
     },
     replaceProduct: (state, action) => {
-      let currIndex = state
-        .map((item) => item.name)
-        .indexOf(action.payload.name);
-
       return [
-        ...state.slice(0, currIndex),
+        ...state.slice(0, action.payload.index),
         action.payload.data,
-        ...state.slice(currIndex + 1),
+        ...state.slice(action.payload.index + 1),
       ];
     },
   },

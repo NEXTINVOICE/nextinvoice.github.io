@@ -88,10 +88,6 @@ export const productValidator = (data) => {
     ret.push("Item Name required");
   }
 
-  if (isNaN(parseInt(data.hsn.trim())) && data.hsn.trim() !== "") {
-    ret.push("Invalid HSN Number");
-  }
-
   if (isNaN(parseInt(data.gst.trim()))) {
     ret.push("Invalid GST rate");
   }

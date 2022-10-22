@@ -6,6 +6,7 @@ import "./productList.scss";
 export default function ProductList({
   setProductIndex,
   showDeleteProductModal,
+  showEditProductModal,
 }) {
   const products = useSelector((store) => store.products);
   return (
@@ -39,6 +40,7 @@ export default function ProductList({
                 <button
                   onClick={() => {
                     setProductIndex(index);
+                    showEditProductModal(true);
                   }}
                 >
                   Edit
