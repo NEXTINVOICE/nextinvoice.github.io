@@ -3,7 +3,10 @@ import { useSelector } from "react-redux";
 import AddProduct from "./AddProduct";
 import "./productList.scss";
 
-export default function ProductList() {
+export default function ProductList({
+  setProductIndex,
+  showDeleteProductModal,
+}) {
   const products = useSelector((store) => store.products);
   return (
     <div className="productList" style={{ border: "1px solid black" }}>
@@ -33,8 +36,21 @@ export default function ProductList() {
               <div>{item.amount}</div>
               <div>{item.total}</div>
               <div>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button
+                  onClick={() => {
+                    setProductIndex(index);
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => {
+                    setProductIndex(index);
+                    showDeleteProductModal(true);
+                  }}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           ))}
