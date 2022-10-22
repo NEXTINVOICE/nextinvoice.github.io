@@ -7,7 +7,9 @@
       "default",
       {
         "ignore": [
-          "position: sticky"
+          "position: sticky",
+          "user-select",
+          "inset"
         ]
       }
     ]
