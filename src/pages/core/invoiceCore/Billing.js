@@ -11,7 +11,7 @@ export default function Billing() {
   const dispatch = useDispatch();
 
   const paymentTypes = ["Cash", "Card", "UPI"];
-  const [paymentType, setPaymentType] = useState(() => paymentTypes[0]);
+  // const [paymentType, setPaymentType] = useState(() => paymentTypes[0]);
 
   useEffect(() => {
     let data = {
@@ -118,7 +118,6 @@ export default function Billing() {
           {paymentTypes.map((item, key) => (
             <option key={key}>{item}</option>
           ))}
-          <option value="Cash">Cash</option>
         </select>
       </div>
     </div>
