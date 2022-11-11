@@ -26,6 +26,12 @@ export default function EditSeller() {
   const [email, setEmail] = useState(() => seller.email);
   const [photoUrl, setPhotoUrl] = useState(() => seller.photoUrl);
   const [pan, setPan] = useState(() => seller.pan);
+  const [accountNumber, setAccountNumber] = useState(
+    () => seller.accountNumber
+  );
+  const [accountHolderName, setAccountHolderName] = useState(
+    () => seller.accountHolderName
+  );
   const [bankName, setBankName] = useState(() => seller.bankName);
   const [bankBranch, setBankBranch] = useState(() => seller.bankBranch);
   const [bankIFSC, setBankIFSC] = useState(() => seller.bankIFSC);
@@ -62,6 +68,8 @@ export default function EditSeller() {
       email,
       photoUrl,
       pan,
+      accountHolderName,
+      accountNumber,
       bankName,
       bankBranch,
       bankIFSC,
@@ -172,6 +180,20 @@ export default function EditSeller() {
           <label htmlFor="includeBankDetails">Include Bank details</label>
         </div>
         <div className={`${!includeBankDetails && "disabled"}`}>
+          <input
+            value={accountHolderName}
+            onChange={(e) => setAccountHolderName(e.target.value)}
+            type="text"
+            name="bank accountHolder"
+            placeholder="Account Holder Name"
+          ></input>
+          <input
+            value={accountNumber}
+            onChange={(e) => setAccountNumber(e.target.value)}
+            type="text"
+            name="bank accountNumber"
+            placeholder="Account Number"
+          ></input>
           <input
             value={bankName}
             onChange={(e) => setBankName(e.target.value)}

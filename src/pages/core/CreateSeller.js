@@ -18,6 +18,8 @@ export default function CreateSeller() {
   const [email, setEmail] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
   const [pan, setPan] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
+  const [accountHolderName, setAccountHolderName] = useState("");
   const [bankName, setBankName] = useState("");
   const [bankBranch, setBankBranch] = useState("");
   const [bankIFSC, setBankIFSC] = useState("");
@@ -47,6 +49,8 @@ export default function CreateSeller() {
       email,
       photoUrl,
       pan,
+      accountHolderName,
+      accountNumber,
       bankName,
       bankBranch,
       bankIFSC,
@@ -150,6 +154,21 @@ export default function CreateSeller() {
           <label htmlFor="includeBankDetails">Include Bank details</label>
         </div>
         <div className={`${!includeBankDetails && "disabled"}`}>
+          <input
+            value={accountHolderName}
+            onChange={(e) => setAccountHolderName(e.target.value)}
+            type="text"
+            name="bank accountHolder"
+            placeholder="Account Holder Name"
+          ></input>
+          <input
+            value={accountNumber}
+            onChange={(e) => setAccountNumber(e.target.value)}
+            type="text"
+            name="bank accountNumber"
+            placeholder="Account Number"
+          ></input>
+
           <input
             value={bankName}
             onChange={(e) => setBankName(e.target.value)}
