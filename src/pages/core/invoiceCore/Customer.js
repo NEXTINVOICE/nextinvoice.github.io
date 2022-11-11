@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setCustomerItem } from "../../../redux/slicers/customer";
 
 export default function Customer() {
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [mob, setMob] = useState("");
-  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+  const customer = useSelector((state) => state.customer);
 
   return (
     <div style={{ border: "1px solid black" }}>
@@ -12,29 +12,37 @@ export default function Customer() {
 
       <div>
         <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={customer.name}
+          onChange={(e) => {
+            dispatch(setCustomerItem({ name: e.target.value }));
+          }}
           type="text"
           name="name"
           placeholder="name"
         ></input>
         <input
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          value={customer.address}
+          onChange={(e) => {
+            dispatch(setCustomerItem({ address: e.target.value }));
+          }}
           type="text"
           name="address"
           placeholder="address"
         ></input>
         <input
-          value={mob}
-          onChange={(e) => setMob(e.target.value)}
+          value={customer.mob}
+          onChange={(e) => {
+            dispatch(setCustomerItem({ mob: e.target.value }));
+          }}
           type="text"
           name="mobile"
           placeholder="mobile"
         ></input>
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={customer.email}
+          onChange={(e) => {
+            dispatch(setCustomerItem({ email: e.target.value }));
+          }}
           type="text"
           name="email"
           placeholder="email"
