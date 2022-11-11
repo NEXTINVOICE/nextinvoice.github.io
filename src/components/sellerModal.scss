@@ -1,0 +1,16 @@
+.sellerList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+    .sellerItem {
+        border: 1px solid black;
+        cursor: pointer;
+
+
+        &:hover {
+            background: grey;
+        }
+    }
+}
