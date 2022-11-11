@@ -5,6 +5,8 @@ export const sellerNormalizer = (data) => {
   data.email = data.email.trim();
   data.photoUrl = data.photoUrl.trim();
   data.pan = data.pan.trim();
+  data.accountHolderName = data.accountHolderName.trim();
+  data.accountNumber = data.accountNumber.trim();
   data.bankName = data.bankName.trim();
   data.bankBranch = data.bankBranch.trim();
   data.bankIFSC = data.bankIFSC.trim();
@@ -16,11 +18,12 @@ export const sellerNormalizer = (data) => {
 };
 
 export const customerNormalizer = (data) => {
-  data.name = data.name.trim();
-  data.address = data.address.trim();
-  data.mob = data.mob.trim();
-  data.email = data.email.trim();
-  return data;
+  return {
+    name: String(data.name).trim(),
+    address: String(data.address).trim(),
+    mob: String(data.mob).trim(),
+    email: String(data.email).trim(),
+  };
 };
 
 export const productNormalizer = (data) => {
