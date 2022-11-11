@@ -7,6 +7,8 @@ const initialState = {
   email: null,
   photoUrl: null,
   pan: null,
+  accountHolderName: null,
+  accountNumber: null,
   bankName: null,
   bankBranch: null,
   bankIFSC: null,
