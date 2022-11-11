@@ -30,6 +30,14 @@ export const sellerValidator = (data) => {
     ret.push("Invalid Pan");
   }
 
+  if (data.includeBankDetails && data.accountHolderName.trim() === "") {
+    ret.push("Account Holder Name required");
+  }
+
+  if (data.includeBankDetails && data.accountNumber.trim() === "") {
+    ret.push("Account Number required");
+  }
+
   if (data.includeBankDetails && !REGEX_ONLY_CHAR.test(data.bankName)) {
     ret.push("Bank name only contains alphabets. (Invalid Bank name)");
   }
@@ -61,14 +69,15 @@ export const customerValidator = (data) => {
   let ret = [];
 
   //Validating Personal infos
-  if (data.name.trim() === "") {
+  if (String(data.name).trim() === "") {
     ret.push("Name required");
   }
 
-  if (data.address.trim() === "") {
+  if (String(data.address).trim() === "") {
     ret.push("Address required");
   }
 
+  console.log(data);
   if (!REGEX_MOB.test(data.mob)) {
     ret.push("Invalid Mobile Number");
   }
