@@ -10,6 +10,8 @@ import "./App.scss";
 import Sellers from "./pages/core/Sellers";
 import EditSeller from "./pages/core/EditSeller";
 import CreateInvoice from "./pages/core/CreateInvoice";
+import TypeA from "./pages/core/invoiceCore/templates/invoice/TypeA";
+import TemplateHandler from "./pages/core/invoiceCore/TemplateHandler";
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
             <Route path="seller/edit" element={<EditSeller />} />
             <Route path="sellers" element={<Sellers />} />
             <Route path="invoice/create" element={<CreateInvoice />} />
+            <Route path="invoice/generate" element={<TemplateHandler />} />
           </Route>
         </Routes>
       </Router>

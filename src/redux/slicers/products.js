@@ -26,9 +26,15 @@ const products = createSlice({
         ...state.slice(action.payload.index + 1),
       ];
     },
+    resetProducts: (state, action) => initialState,
   },
 });
 
-export const { setProducts, createProduct, deleteProduct, replaceProduct } =
-  products.actions;
+export const {
+  setProducts,
+  createProduct,
+  deleteProduct,
+  replaceProduct,
+  resetProducts,
+} = products.actions;
 export default products.reducer;
