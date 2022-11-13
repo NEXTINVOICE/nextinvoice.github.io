@@ -2,3 +2,64 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+
+:root {
+    //Accent Colors
+    --accentLight: #FFFFFF;
+
+    --accentPrimary: #6750A4;
+    --accentPrimaryLight: #EADDFF;
+    --accentPrimaryDark: #21005D;
+    --accentPrimaryText: #7C68B0;
+    --accentPrimaryTextLight: #35166D;
+    --accentPrimaryTextDark: #EADDFF;
+
+    
+    --accentSecondary: #625B71;
+    --accentSecondaryLight: #E8DEF8;
+    --accentSecondaryDark: #1D192B;
+    --accentSecondaryText: #625B71;
+    --accentSecondaryTextLight: #231F31;
+    --accentSecondaryTextDark: #D4CAE4;
+
+
+    --accentTertiary: #7D5260;
+    --accentTertiaryLight: #FFD8E4;
+    --accentTertiaryDark: #31111D;
+    --accentTertiaryText: #7E5361;
+    --accentTertiaryTextLight: #40202C;
+    --accentTertiaryTextDark: #F3CCD8;
+
+
+    --accentError: #B3261E;
+    --accentErrorLight: #F9DEDC;
+    --accentErrorDark: #410E0B;
+    --accentErrorText: #B73129;
+    --accentErrorTextLight: #501E1B;
+    --accentErrorTextDark: #F8DCDA;
+
+
+    --accentYellow: #765B00;
+    --accentYellowLight: #FFE088;
+    --accentYellowDark: #241A00;
+    --accentYellowText: #7C620B;
+    --accentYellowTextLight: #271D02;
+    --accentYellowTextDark: #FFE088;
+
+
+    --accentOrange: #914C00;
+    --accentOrangeLight: #FFDCC1;
+    --accentOrangeDark: #2F1500;
+    --accentOrangeText: #914C00;
+    --accentOrangeTextLight: #2F1500;
+    --accentOrangeTextDark: #F9D6BB;
+
+
+    --accentGreen: #4B6708;
+    --accentGreenLight: #CDEF85;
+    --accentGreenDark: #131F00;
+    --accentGreenText: #5A741D;
+    --accentGreenTextLight: #26350D;
+    --accentGreenTextDark: #B3D172;
+}
