@@ -5,14 +5,20 @@ export const sellerNormalizer = (data) => {
   data.email = data.email.trim();
   data.photoUrl = data.photoUrl.trim();
   data.pan = data.pan.trim();
-  data.accountHolderName = data.accountHolderName.trim();
-  data.accountNumber = data.accountNumber.trim();
-  data.bankName = data.bankName.trim();
-  data.bankBranch = data.bankBranch.trim();
-  data.bankIFSC = data.bankIFSC.trim();
-  data.gstNumber = data.gstNumber.trim();
-  data.termsAndConditions = data.termsAndConditions.trim();
-  data.digitalSignName = data.digitalSignName.trim();
+  data.accountHolderName = data.accountHolderName
+    ? data.accountHolderName.trim()
+    : "";
+  data.accountNumber = data.accountNumber ? data.accountNumber.trim() : "";
+  data.bankName = data.bankName ? data.bankName.trim() : "";
+  data.bankBranch = data.bankBranch ? data.bankBranch.trim() : "";
+  data.bankIFSC = data.bankIFSC ? data.bankIFSC.trim() : "";
+  data.gstNumber = data.gstNumber ? data.gstNumber.trim() : "";
+  data.termsAndConditions = data.termsAndConditions
+    ? data.termsAndConditions.trim()
+    : "";
+  data.digitalSignName = data.digitalSignName
+    ? data.digitalSignName.trim()
+    : "";
 
   return data;
 };

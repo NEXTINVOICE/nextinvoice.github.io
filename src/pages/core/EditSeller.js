@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import AccentSetModal from "../../components/AccentSetModal";
+import AccentType from "../../components/AccentType";
 import DesignSetModal from "../../components/DesignSetModal";
 import DesignType from "../../components/DesignType";
 import { sellerNormalizer } from "../../operations/normalizer";
 import {
   invoiceDesignSets,
   signatureDesignSets,
+  accentSets,
 } from "../../operations/stylesets";
 import { sellerValidator } from "../../operations/validators";
 import { resetSeller } from "../../redux/slicers/seller";
@@ -45,6 +48,9 @@ export default function EditSeller() {
   const [digitalSignType, setDigitalSignType] = useState(
     () => seller.digitalSignType
   );
+  const [accentType, setAccentType] = useState(() =>
+    seller.accentType ? seller.accentType : 0
+  );
   const [invoiceDesignType, setInvoiceDesignType] = useState(
     () => seller.invoiceDesignType
   );
@@ -60,6 +66,7 @@ export default function EditSeller() {
   const [validation, setValidation] = useState([]);
 
   const [showDigitalSignType, setShowDigitalSignType] = useState(false);
+  const [showAccentType, setShowAccentType] = useState(false);
   const [showInvoiceTypeModal, setShowInvoiceTypeModal] = useState(false);
 
   const doEditSeller = () => {
@@ -79,6 +86,7 @@ export default function EditSeller() {
       termsAndConditions,
       digitalSignName,
       digitalSignType,
+      accentType,
       invoiceDesignType,
       includeBankDetails,
       includeTermsAndConditions,
@@ -269,6 +277,10 @@ export default function EditSeller() {
         <div onClick={() => setShowInvoiceTypeModal(!showInvoiceTypeModal)}>
           <DesignType value={invoiceDesignType} sets={invoiceDesignSets} />
         </div>
+
+        <div onClick={() => setShowAccentType(!showAccentType)}>
+          <AccentType value={accentType} sets={accentSets} />
+        </div>
       </div>
 
       <div>
@@ -303,6 +315,14 @@ export default function EditSeller() {
 
       <button onClick={() => doEditSeller()}>Apply</button>
       <button onClick={() => navigate(-1, { replace: true })}>Cancel</button>
+
+      {showAccentType && (
+        <AccentSetModal
+          show={setShowAccentType}
+          sets={accentSets}
+          apply={setAccentType}
+        />
+      )}
 
       {showDigitalSignType && (
         <DesignSetModal

@@ -53,3 +53,173 @@ export const invoiceDesignSets = [
       "https://plus.unsplash.com/premium_photo-1661370360512-7adac873f72d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
   },
 ];
+
+export const accentSets = [
+  {
+    name: "Primary Type A",
+    background: "accentPrimary",
+    foreground: "accentLight",
+  },
+  {
+    name: "Primary Type B",
+    background: "accentLight",
+    foreground: "accentPrimaryText",
+  },
+  {
+    name: "Primary Type C",
+    background: "accentPrimaryLight",
+    foreground: "accentPrimaryTextLight",
+  },
+  {
+    name: "Primary Type D",
+    background: "accentPrimaryDark",
+    foreground: "accentPrimaryTextDark",
+  },
+
+  {
+    name: "Secondary Type A",
+    background: "accentSecondary",
+    foreground: "accentLight",
+  },
+  {
+    name: "Secondary Type B",
+    background: "accentLight",
+    foreground: "accentSecondaryText",
+  },
+  {
+    name: "Secondary Type C",
+    background: "accentSecondaryLight",
+    foreground: "accentSecondaryTextLight",
+  },
+  {
+    name: "Secondary Type D",
+    background: "accentSecondaryDark",
+    foreground: "accentSecondaryTextDark",
+  },
+
+  {
+    name: "Tertiary Type A",
+    background: "accentTertiary",
+    foreground: "accentLight",
+  },
+  {
+    name: "Tertiary Type B",
+    background: "accentLight",
+    foreground: "accentTertiaryText",
+  },
+  {
+    name: "Tertiary Type C",
+    background: "accentTertiaryLight",
+    foreground: "accentTertiaryTextLight",
+  },
+  {
+    name: "Tertiary Type D",
+    background: "accentTertiaryDark",
+    foreground: "accentTertiaryTextDark",
+  },
+
+  {
+    name: "Tertiary Type A",
+    background: "accentTertiary",
+    foreground: "accentLight",
+  },
+  {
+    name: "Tertiary Type B",
+    background: "accentLight",
+    foreground: "accentTertiaryText",
+  },
+  {
+    name: "Tertiary Type C",
+    background: "accentTertiaryLight",
+    foreground: "accentTertiaryTextLight",
+  },
+  {
+    name: "Tertiary Type D",
+    background: "accentTertiaryDark",
+    foreground: "accentTertiaryTextDark",
+  },
+
+  {
+    name: "Red Type A",
+    background: "accentError",
+    foreground: "accentLight",
+  },
+  {
+    name: "Red Type B",
+    background: "accentLight",
+    foreground: "accentErrorText",
+  },
+  {
+    name: "Red Type C",
+    background: "accentErrorLight",
+    foreground: "accentErrorTextLight",
+  },
+  {
+    name: "Red Type D",
+    background: "accentErrorDark",
+    foreground: "accentErrorTextDark",
+  },
+
+  {
+    name: "Yellow Type A",
+    background: "accentYellow",
+    foreground: "accentLight",
+  },
+  {
+    name: "Yellow Type B",
+    background: "accentLight",
+    foreground: "accentYellowText",
+  },
+  {
+    name: "Yellow Type C",
+    background: "accentYellowLight",
+    foreground: "accentYellowTextLight",
+  },
+  {
+    name: "Yellow Type D",
+    background: "accentYellowDark",
+    foreground: "accentYellowTextDark",
+  },
+
+  {
+    name: "Orange Type A",
+    background: "accentOrange",
+    foreground: "accentLight",
+  },
+  {
+    name: "Orange Type B",
+    background: "accentLight",
+    foreground: "accentOrangeText",
+  },
+  {
+    name: "Orange Type C",
+    background: "accentOrangeLight",
+    foreground: "accentOrangeTextLight",
+  },
+  {
+    name: "Orange Type D",
+    background: "accentOrangeDark",
+    foreground: "accentOrangeTextDark",
+  },
+
+  {
+    name: "Green Type A",
+    background: "accentGreen",
+    foreground: "accentLight",
+  },
+  {
+    name: "Green Type B",
+    background: "accentLight",
+    foreground: "accentGreenText",
+  },
+  {
+    name: "Green Type C",
+    background: "accentGreenLight",
+    foreground: "accentGreenTextLight",
+  },
+  {
+    name: "Green Type D",
+    background: "accentGreenDark",
+    foreground: "accentGreenTextDark",
+  },
+];

@@ -16,6 +16,7 @@ const initialState = {
   termsAndConditions: null,
   digitalSignName: null,
   digitalSignType: null,
+  accentType: 0,
   invoiceDesignType: null,
   includeBankDetails: null,
   includeTermsAndConditions: null,

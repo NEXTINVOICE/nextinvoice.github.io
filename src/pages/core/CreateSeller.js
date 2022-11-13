@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import AccentSetModal from "../../components/AccentSetModal";
+import AccentType from "../../components/AccentType";
 import DesignSetModal from "../../components/DesignSetModal";
 import DesignType from "../../components/DesignType";
 import { sellerNormalizer } from "../../operations/normalizer";
 import {
   invoiceDesignSets,
   signatureDesignSets,
+  accentSets,
 } from "../../operations/stylesets";
 import { sellerValidator } from "../../operations/validators";
 import { createSeller } from "../../redux/slicers/sellers";
@@ -27,6 +30,7 @@ export default function CreateSeller() {
   const [termsAndConditions, setTermsAndConditions] = useState("");
   const [digitalSignName, setDigitalSignName] = useState("");
   const [digitalSignType, setDigitalSignType] = useState(0);
+  const [accentType, setAccentType] = useState(0);
   const [invoiceDesignType, setInvoiceDesignType] = useState(0);
   const [includeBankDetails, setIncludeBankDetails] = useState(false);
   const [includeTermsAndConditions, setIncludeTermsAndConditions] =
@@ -37,6 +41,7 @@ export default function CreateSeller() {
   const [validation, setValidation] = useState([]);
 
   const [showDigitalSignType, setShowDigitalSignType] = useState(false);
+  const [showAccentType, setShowAccentType] = useState(false);
   const [showInvoiceTypeModal, setShowInvoiceTypeModal] = useState(false);
 
   const sellers = useSelector((store) => store.sellers);
@@ -60,6 +65,7 @@ export default function CreateSeller() {
       termsAndConditions,
       digitalSignName,
       digitalSignType,
+      accentType,
       invoiceDesignType,
       includeBankDetails,
       includeTermsAndConditions,
@@ -244,6 +250,10 @@ export default function CreateSeller() {
         <div onClick={() => setShowInvoiceTypeModal(!showInvoiceTypeModal)}>
           <DesignType value={invoiceDesignType} sets={invoiceDesignSets} />
         </div>
+
+        <div onClick={() => setShowAccentType(!showAccentType)}>
+          <AccentType value={accentType} sets={accentSets} />
+        </div>
       </div>
 
       <div>
@@ -277,6 +287,14 @@ export default function CreateSeller() {
       </div>
 
       <button onClick={() => doCreateSeller()}>Create</button>
+
+      {showAccentType && (
+        <AccentSetModal
+          show={setShowAccentType}
+          sets={accentSets}
+          apply={setAccentType}
+        />
+      )}
 
       {showDigitalSignType && (
         <DesignSetModal
