@@ -19,6 +19,8 @@ const initialState = {
   invoiceDesignType: null,
   includeBankDetails: null,
   includeTermsAndConditions: null,
+  generateQr: true,
+  generateInv: true,
 };
 
 const seller = createSlice({

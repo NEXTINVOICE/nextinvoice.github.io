@@ -54,6 +54,8 @@ export default function EditSeller() {
   const [includeTermsAndConditions, setIncludeTermsAndConditions] = useState(
     () => seller.includeTermsAndConditions
   );
+  const [generateQr, setGenerateQr] = useState(() => seller.generateQr);
+  const [generateInv, setGenerateInv] = useState(() => seller.generateInv);
 
   const [validation, setValidation] = useState([]);
 
@@ -80,6 +82,8 @@ export default function EditSeller() {
       invoiceDesignType,
       includeBankDetails,
       includeTermsAndConditions,
+      generateQr,
+      generateInv,
     };
 
     // Name validation existence
@@ -265,6 +269,30 @@ export default function EditSeller() {
         <div onClick={() => setShowInvoiceTypeModal(!showInvoiceTypeModal)}>
           <DesignType value={invoiceDesignType} sets={invoiceDesignSets} />
         </div>
+      </div>
+
+      <div>
+        <input
+          type="checkbox"
+          id="generateQr"
+          name="generateQr"
+          value="generateQr"
+          checked={generateQr}
+          onChange={() => setGenerateQr(!generateQr)}
+        />
+        <label htmlFor="generateQr">Generate QR</label>
+      </div>
+
+      <div>
+        <input
+          type="checkbox"
+          id="generateInv"
+          name="generateInv"
+          value="generateInv"
+          checked={generateInv}
+          onChange={() => setGenerateInv(!generateInv)}
+        />
+        <label htmlFor="generateInv">Generate Invoice File</label>
       </div>
 
       <div>
