@@ -1,6 +1,6 @@
 import html2pdf from "html-to-pdf-js";
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resetCustomer } from "../../../redux/slicers/customer";
 import { resetInvoice } from "../../../redux/slicers/invoice";
@@ -17,10 +17,40 @@ export default function TemplateHandler({ templateNumber = 0 }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const seller = useSelector((state) => state.seller);
+  const customer = useSelector((state) => state.customer);
+  const products = useSelector((state) => state.products);
+  const invoice = useSelector((state) => state.invoice);
+  const amount = useSelector((state) => state.amount);
+  const invoiceNumber =
+    seller.name[0].toUpperCase() + "INV" + Date.now().toString();
+
   useEffect(() => {
     if (state)
       generatePDF()
         .then(() => {
+          if (seller.generateInv) {
+            const element = document.createElement("a");
+            const file = new Blob(
+              [
+                JSON.stringify({
+                  invoice,
+                  amount,
+                  seller,
+                  customer,
+                  products,
+                }),
+              ],
+              {
+                type: "text/plain",
+              }
+            );
+            element.href = URL.createObjectURL(file);
+            element.download = `${invoiceNumber}.inv`;
+            document.body.appendChild(element);
+            element.click();
+          }
+
           setDone(true);
         })
         .catch((e) => {
@@ -42,7 +72,7 @@ export default function TemplateHandler({ templateNumber = 0 }) {
         const x = await html2pdf()
           .set({
             margin: 0.3,
-            filename: "myfile.pdf",
+            filename: `${invoiceNumber}.pdf`,
             image: { type: "jpeg", quality: 1 },
             html2canvas: { useCORS: true, scale: 4, letterRendering: true },
             jsPDF: { unit: "in", format: "A4", orientation: "portrait" },
@@ -76,7 +106,9 @@ export default function TemplateHandler({ templateNumber = 0 }) {
 
   return (
     <div>
-      {templateNumber === 0 && <TypeA hide={true} />}
+      {templateNumber === 0 && (
+        <TypeA hide={true} invoiceNumber={invoiceNumber} />
+      )}
 
       <div className="progressSection">
         {!isDone && <div>Please Wait</div>}

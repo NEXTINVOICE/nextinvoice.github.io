@@ -49,15 +49,13 @@ const para1 = `STTART Ipsum
 
 const para = "joicajor,whjoi3uh523h53j23j23t2c93tjh0,2htt2940t,h";
 
-export default function TypeA({ hide, isDone, isErr }) {
+export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
   const seller = useSelector((state) => state.seller);
   const customer = useSelector((state) => state.customer);
   const products = useSelector((state) => state.products);
   const invoice = useSelector((state) => state.invoice);
   const amount = useSelector((state) => state.amount);
   const profile = useSelector((state) => state.profile);
-  const invoiceNumber =
-    seller.name[0].toUpperCase() + "INV" + Date.now().toString();
 
   const accText = {
     color: `var(--${accentSets[seller.accentType].palettes[0].background})`,
