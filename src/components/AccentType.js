@@ -4,13 +4,36 @@ import "./AccentType.scss";
 export default function AccentType({ value, sets }) {
   return (
     <div className="accent-type">
-      <div className="palette">
+      <div className="palettes">
         <div
           style={{
-            background: `var(--${sets[value].background})`,
-            color: `var(--${sets[value].foreground})`,
+            background: `var(--${sets[value].palettes[3].background})`,
+            color: `var(--${sets[value].palettes[3].foreground})`,
           }}
-          className="background"
+        >
+          A
+        </div>
+        <div
+          style={{
+            background: `var(--${sets[value].palettes[0].background})`,
+            color: `var(--${sets[value].palettes[0].foreground})`,
+          }}
+        >
+          A
+        </div>
+        <div
+          style={{
+            background: `var(--${sets[value].palettes[1].background})`,
+            color: `var(--${sets[value].palettes[1].foreground})`,
+          }}
+        >
+          A
+        </div>
+        <div
+          style={{
+            background: `var(--${sets[value].palettes[2].background})`,
+            color: `var(--${sets[value].palettes[2].foreground})`,
+          }}
         >
           A
         </div>
