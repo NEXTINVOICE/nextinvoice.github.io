@@ -9,6 +9,7 @@ import {
   getQrCode,
   transformInvoice,
 } from "../../../../../operations/qrUtils";
+import { accentSets } from "../../../../../operations/stylesets";
 
 const para1 = `STTART Ipsum
   "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
@@ -58,13 +59,29 @@ export default function TypeA({ hide, isDone, isErr }) {
   const invoiceNumber =
     seller.name[0].toUpperCase() + "INV" + Date.now().toString();
 
+  const accText = {
+    color: `var(--${accentSets[seller.accentType].palettes[0].background})`,
+  };
+
+  const tableHeaderBg = {
+    background: `var(--${
+      accentSets[seller.accentType].palettes[0].background
+    })`,
+  };
+
+  const tableHeadertext = {
+    color: `var(--${accentSets[seller.accentType].palettes[0].foreground})`,
+  };
+
   return (
     <>
       <div
         style={{ display: `${hide ? "none" : "block"}`, margin: "4rem 3rem" }}
       >
         <section id="invoiceTypeA" className="invoiceTypeA">
-          <div className="mainHeader">Invoice</div>
+          <div style={accText} className="mainHeader">
+            Invoice
+          </div>
           <div className="invoiceInfoCont">
             <div className="infoCont">
               <div className="row">
@@ -90,8 +107,17 @@ export default function TypeA({ hide, isDone, isErr }) {
           </div>
 
           <div className="relationInfoCont">
-            <div className="relationItem">
-              <p className="header">Billed by</p>
+            <div
+              // style={{
+              //   background: `var(--${
+              //     accentSets[seller.accentType].palettes[2].background
+              //   })`,
+              // }}
+              className="relationItem"
+            >
+              <p style={accText} className="header">
+                Billed by
+              </p>
               <p className="relationName">{seller.name}</p>
               <p className="relationAddress">{seller.address}</p>
               <div className="relationInfoRow">
@@ -104,7 +130,9 @@ export default function TypeA({ hide, isDone, isErr }) {
               </div>
             </div>
             <div className="relationItem">
-              <p className="header">Billed to</p>
+              <p style={accText} className="header">
+                Billed to
+              </p>
               <p className="relationName">{customer.name}</p>
               <p className="relationAddress">{customer.address}</p>
               <div className="relationInfoRow">
@@ -119,14 +147,28 @@ export default function TypeA({ hide, isDone, isErr }) {
           </div>
 
           <div id="typeATable" className="invoiceTable">
-            <div className="header">
-              <div className="item">Item#/Item description</div>
-              <div className="item">HSN</div>
-              <div className="item">GST</div>
-              <div className="item">CSGST</div>
-              <div className="item">Amount</div>
-              <div className="item">Qty.</div>
-              <div className="item">Total</div>
+            <div style={tableHeaderBg} className="header">
+              <div style={tableHeadertext} className="item">
+                Item#/Item description
+              </div>
+              <div style={tableHeadertext} className="item">
+                HSN
+              </div>
+              <div style={tableHeadertext} className="item">
+                GST
+              </div>
+              <div style={tableHeadertext} className="item">
+                CSGST
+              </div>
+              <div style={tableHeadertext} className="item">
+                Amount
+              </div>
+              <div style={tableHeadertext} className="item">
+                Qty.
+              </div>
+              <div style={tableHeadertext} className="item">
+                Total
+              </div>
             </div>
             {products.map((item, index) => (
               <div key={index} className="row">
@@ -147,7 +189,9 @@ export default function TypeA({ hide, isDone, isErr }) {
             <div className="financialInfo">
               {seller.includeBankDetails && amount.paymentType === "Card" && (
                 <>
-                  <div className="header">Bank & Payment Details</div>
+                  <div style={accText} className="header">
+                    Bank & Payment Details
+                  </div>
                   <div className="infoCont">
                     <div className="row">
                       <div className="title">Account Holder Name</div>
@@ -189,8 +233,8 @@ export default function TypeA({ hide, isDone, isErr }) {
                 </div>
                 <div className="column">
                   <div className="value">{amount.itemAmount}</div>
-                  <div className="value">{amount.taxAmount / 1}</div>
-                  <div className="value">{amount.taxAmount / 1}</div>
+                  <div className="value">{amount.taxAmount / 2}</div>
+                  <div className="value">{amount.taxAmount / 2}</div>
                   {!amount.fullyPaid && (
                     <>
                       <div className="value">{amount.totalAmount}</div>
@@ -225,7 +269,9 @@ export default function TypeA({ hide, isDone, isErr }) {
           {seller.includeTermsAndConditions && (
             <div className="termsAndConditions">
               <div>
-                <div className="header">Terms and Conditions</div>
+                <div style={accText} className="header">
+                  Terms and Conditions
+                </div>
                 <div className="value">
                   {seller.termsAndConditions}
                   {/* 1. Please pay within 15 days from the date of invoice, overdue
@@ -235,42 +281,45 @@ export default function TypeA({ hide, isDone, isErr }) {
               </div>
             </div>
           )}
-
-          <div className="nextInvQRCont">
-            <div className="wrapper">
-              <div className="mainCont">
-                <div className="vBorder"></div>
-                <div style={{ display: "none" }} className="vBorder"></div>
-                <div style={{ display: "none" }} className="vBorder"></div>
-                <div className="vBorder"></div>
-                <div className="vBorder"></div>
-                <div style={{ display: "none" }} className="vBorder"></div>
-                <div style={{ display: "none" }} className="vBorder"></div>
-                <div className="vBorder"></div>
-                <QRCode
-                  size={512}
-                  bgColor="#F4F8F9"
-                  fgColor="#262C35"
-                  value={getQrCode(
-                    JSON.stringify(
-                      transformInvoice({
-                        invoice,
-                        amount,
-                        seller,
-                        customer,
-                        products,
-                      })
-                    ),
-                    profile.password
-                  )}
-                />
-              </div>
-              <div className="infoCont">
-                <div className="header">Scan QR Code</div>
-                <div className="value">To verfiy its integrity</div>
+          {seller.generateQr && (
+            <div className="nextInvQRCont">
+              <div className="wrapper">
+                <div className="mainCont">
+                  <div className="vBorder"></div>
+                  <div style={{ display: "none" }} className="vBorder"></div>
+                  <div style={{ display: "none" }} className="vBorder"></div>
+                  <div className="vBorder"></div>
+                  <div className="vBorder"></div>
+                  <div style={{ display: "none" }} className="vBorder"></div>
+                  <div style={{ display: "none" }} className="vBorder"></div>
+                  <div className="vBorder"></div>
+                  <QRCode
+                    size={512}
+                    bgColor="#F4F8F9"
+                    fgColor="#262C35"
+                    value={getQrCode(
+                      JSON.stringify(
+                        transformInvoice({
+                          invoice,
+                          amount,
+                          seller,
+                          customer,
+                          products,
+                        })
+                      ),
+                      profile.password
+                    )}
+                  />
+                </div>
+                <div className="infoCont">
+                  <div style={accText} className="header">
+                    Scan QR Code
+                  </div>
+                  <div className="value">To verfiy its integrity</div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </section>
       </div>
     </>
