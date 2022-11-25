@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { balanceSeller } from "../redux/slicers/invoiceSeller";
 import { deleteSeller } from "../redux/slicers/sellers";
 
 export default function DeleteSellerModal({ index, show }) {
@@ -7,6 +8,7 @@ export default function DeleteSellerModal({ index, show }) {
 
   const doDeleteSeller = () => {
     dispatch(deleteSeller(index));
+    dispatch(balanceSeller());
     show(false);
   };
 

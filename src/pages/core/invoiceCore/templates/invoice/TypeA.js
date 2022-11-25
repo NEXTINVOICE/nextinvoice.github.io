@@ -50,7 +50,8 @@ const para1 = `STTART Ipsum
 const para = "joicajor,whjoi3uh523h53j23j23t2c93tjh0,2htt2940t,h";
 
 export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
-  const seller = useSelector((state) => state.seller);
+  const invoiceSeller = useSelector((state) => state.invoiceSeller);
+  const sellers = useSelector((state) => state.sellers);
   const customer = useSelector((state) => state.customer);
   const products = useSelector((state) => state.products);
   const invoice = useSelector((state) => state.invoice);
@@ -58,17 +59,21 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
   const profile = useSelector((state) => state.profile);
 
   const accText = {
-    color: `var(--${accentSets[seller.accentType].palettes[0].background})`,
+    color: `var(--${
+      accentSets[sellers[invoiceSeller].accentType].palettes[0].background
+    })`,
   };
 
   const tableHeaderBg = {
     background: `var(--${
-      accentSets[seller.accentType].palettes[0].background
+      accentSets[sellers[invoiceSeller].accentType].palettes[0].background
     })`,
   };
 
   const tableHeadertext = {
-    color: `var(--${accentSets[seller.accentType].palettes[0].foreground})`,
+    color: `var(--${
+      accentSets[sellers[invoiceSeller].accentType].palettes[0].foreground
+    })`,
   };
 
   return (
@@ -100,7 +105,7 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
             <img
               className="companyLogo"
               alt="companyLogo"
-              src={seller.photoUrl}
+              src={sellers[invoiceSeller].photoUrl}
             />
           </div>
 
@@ -108,7 +113,7 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
             <div
               // style={{
               //   background: `var(--${
-              //     accentSets[seller.accentType].palettes[2].background
+              //     accentSets[sellers[invoiceSeller].accentType].palettes[2].background
               //   })`,
               // }}
               className="relationItem"
@@ -116,15 +121,17 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
               <p style={accText} className="header">
                 Billed by
               </p>
-              <p className="relationName">{seller.name}</p>
-              <p className="relationAddress">{seller.address}</p>
+              <p className="relationName">{sellers[invoiceSeller].name}</p>
+              <p className="relationAddress">
+                {sellers[invoiceSeller].address}
+              </p>
               <div className="relationInfoRow">
                 <p className="title">GSTIN</p>
-                <p className="value">{seller.gstNumber}</p>
+                <p className="value">{sellers[invoiceSeller].gstNumber}</p>
               </div>
               <div className="relationInfoRow">
                 <p className="title">PAN</p>
-                <p className="value">{seller.pan}</p>
+                <p className="value">{sellers[invoiceSeller].pan}</p>
               </div>
             </div>
             <div className="relationItem">
@@ -185,35 +192,46 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
 
           <div className="billingCont">
             <div className="financialInfo">
-              {seller.includeBankDetails && amount.paymentType === "Card" && (
-                <>
-                  <div style={accText} className="header">
-                    Bank & Payment Details
-                  </div>
-                  <div className="infoCont">
-                    <div className="row">
-                      <div className="title">Account Holder Name</div>
-                      <div className="value">{seller.accountHolderName}</div>
+              {sellers[invoiceSeller].includeBankDetails &&
+                amount.paymentType === "Card" && (
+                  <>
+                    <div style={accText} className="header">
+                      Bank & Payment Details
                     </div>
-                    <div className="row">
-                      <div className="title">Account Number</div>
-                      <div className="value">{seller.accountNumber}</div>
+                    <div className="infoCont">
+                      <div className="row">
+                        <div className="title">Account Holder Name</div>
+                        <div className="value">
+                          {sellers[invoiceSeller].accountHolderName}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="title">Account Number</div>
+                        <div className="value">
+                          {sellers[invoiceSeller].accountNumber}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="title">Bank</div>
+                        <div className="value">
+                          {sellers[invoiceSeller].bankName}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="title">Branch</div>
+                        <div className="value">
+                          {sellers[invoiceSeller].bankBranch}
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="title">IFSC</div>
+                        <div className="value">
+                          {sellers[invoiceSeller].bankIFSC}
+                        </div>
+                      </div>
                     </div>
-                    <div className="row">
-                      <div className="title">Bank</div>
-                      <div className="value">{seller.bankName}</div>
-                    </div>
-                    <div className="row">
-                      <div className="title">Branch</div>
-                      <div className="value">{seller.bankBranch}</div>
-                    </div>
-                    <div className="row">
-                      <div className="title">IFSC</div>
-                      <div className="value">{seller.bankIFSC}</div>
-                    </div>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
             </div>
 
             <div className="billingInfo">
@@ -264,14 +282,14 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
               </div>
             </div>
           </div>
-          {seller.includeTermsAndConditions && (
+          {sellers[invoiceSeller].includeTermsAndConditions && (
             <div className="termsAndConditions">
               <div>
                 <div style={accText} className="header">
                   Terms and Conditions
                 </div>
                 <div className="value">
-                  {seller.termsAndConditions}
+                  {sellers[invoiceSeller].termsAndConditions}
                   {/* 1. Please pay within 15 days from the date of invoice, overdue
                   interest @ 14% will be charged on delayed payments. <br></br>
                   2. Please quote invoice number when remitting funds. */}
@@ -279,7 +297,7 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
               </div>
             </div>
           )}
-          {seller.generateQr && (
+          {sellers[invoiceSeller].generateQr && (
             <div className="nextInvQRCont">
               <div className="wrapper">
                 <div className="mainCont">
@@ -300,7 +318,7 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
                         transformInvoice({
                           invoice,
                           amount,
-                          seller,
+                          seller: sellers[invoiceSeller],
                           customer,
                           products,
                         })

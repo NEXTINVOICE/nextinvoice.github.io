@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { selectInvoiceSeller } from "../redux/slicers/invoiceSeller";
 import { selectSeller } from "../redux/slicers/seller";
 import "./sellerModal.scss";
 
@@ -8,7 +9,7 @@ export default function SellerModal({ show }) {
   const dispatch = useDispatch();
 
   const apply = (item) => {
-    dispatch(selectSeller(item));
+    dispatch(selectInvoiceSeller(item));
     show(false);
   };
 
@@ -18,7 +19,7 @@ export default function SellerModal({ show }) {
         <div>Select seller</div>
         <div className="sellerList">
           {sellers.map((item, key) => (
-            <div key={key} className="sellerItem" onClick={() => apply(item)}>
+            <div key={key} className="sellerItem" onClick={() => apply(key)}>
               <div>{item.name}</div>
               <div>{item.address}</div>
               <div>{item.mob}</div>

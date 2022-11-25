@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import dummyReducer from "./slicers/dummy";
 import profileReducer from "./slicers/profile";
 import sellerReducer from "./slicers/seller";
+import invoiceSellerReducer from "./slicers/invoiceSeller";
 import sellersReducer from "./slicers/sellers";
 import customerReducer from "./slicers/customer";
 import productsReducer from "./slicers/products";
@@ -14,6 +15,7 @@ export default configureStore(
       dummy: dummyReducer,
       profile: profileReducer,
       seller: sellerReducer,
+      invoiceSeller: invoiceSellerReducer,
       sellers: sellersReducer,
       customer: customerReducer,
       products: productsReducer,
