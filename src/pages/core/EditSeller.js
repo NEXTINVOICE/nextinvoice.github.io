@@ -62,6 +62,7 @@ export default function EditSeller() {
   );
   const [generateQr, setGenerateQr] = useState(() => seller.generateQr);
   const [generateInv, setGenerateInv] = useState(() => seller.generateInv);
+  const [isPrimary, setIsPrimary] = useState(() => seller.isPrimary);
 
   const [validation, setValidation] = useState([]);
 
@@ -92,6 +93,7 @@ export default function EditSeller() {
       includeTermsAndConditions,
       generateQr,
       generateInv,
+      isPrimary,
     };
 
     // Name validation existence
@@ -125,6 +127,17 @@ export default function EditSeller() {
     <div>
       <h2>Edit Seller</h2>
       <h3>Seller Name: {seller.name}</h3>
+      <div className={`${sellers.length === 1 && "disabled"}`}>
+        <input
+          type="checkbox"
+          id="primarySeller"
+          name="primarySeller"
+          value="primarySeller"
+          checked={isPrimary}
+          onChange={() => setIsPrimary(!isPrimary)}
+        />
+        <label htmlFor="primarySeller">Primary Seller</label>
+      </div>
       <div>
         <h4>Personal</h4>
         <input

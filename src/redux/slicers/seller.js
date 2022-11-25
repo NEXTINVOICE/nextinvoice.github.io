@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  isPrimary: null,
   name: null,
   address: null,
   mob: null,

@@ -48,6 +48,10 @@ export default function CreateSeller() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [isPrimary, setIsPrimary] = useState(() => {
+    return sellers.length === 0 ? true : false;
+  });
+
   const doCreateSeller = () => {
     const data = {
       name,
@@ -71,6 +75,7 @@ export default function CreateSeller() {
       includeTermsAndConditions,
       generateQr,
       generateInv,
+      isPrimary,
     };
 
     // Name validation existence
@@ -97,6 +102,17 @@ export default function CreateSeller() {
   return (
     <div>
       <h2>Create Seller</h2>
+      <div className={`${sellers.length === 0 && "disabled"}`}>
+        <input
+          type="checkbox"
+          id="primarySeller"
+          name="primarySeller"
+          value="primarySeller"
+          checked={isPrimary}
+          onChange={() => setIsPrimary(!isPrimary)}
+        />
+        <label htmlFor="primarySeller">Primary Seller</label>
+      </div>
       <div>
         <h4>Personal</h4>
         <input
