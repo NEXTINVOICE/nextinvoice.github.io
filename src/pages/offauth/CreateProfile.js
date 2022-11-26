@@ -3,6 +3,8 @@ import sha256 from "crypto-js/sha256";
 import { getProfiles, setProfile } from "../../operations/localProfile";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import heroLogo from "../../res/heroLogo.png";
+import "./createProfile.scss";
 
 export default function CreateProfile() {
   const navigate = useNavigate();
@@ -61,36 +63,60 @@ export default function CreateProfile() {
   };
 
   return (
-    <div>
-      <p>Create Profile</p>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="username"
-        pattern="[A-Za-z]{3}"
-        value={username}
-        onChange={(e) => setUsername(e.target.value.trim())}
-      ></input>
-      <div>{usernameErr}</div>
-      <input
-        type="text"
-        id="password"
-        name="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value.trim())}
-      ></input>
-      <input
-        type="text"
-        id="password2"
-        name="password2"
-        placeholder="Retype password"
-        value={password2}
-        onChange={(e) => setPassword2(e.target.value.trim())}
-      ></input>
-      <div>{passwordErr}</div>
-      <button onClick={() => create()}>Create</button>
+    <div className="signupPage">
+      <div className="heroHeader">
+        <img src={heroLogo} alt="next invoice" />
+        <p>
+          Next <span>Invoice</span>
+        </p>
+      </div>
+      <div className="signupForm">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="username">Username</label>
+          </div>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            pattern="[A-Za-z]{3}"
+            value={username}
+            onChange={(e) => setUsername(e.target.value.trim())}
+          ></input>
+          {usernameErr && <div className="err">{usernameErr}</div>}
+        </div>
+
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="password">Password</label>
+          </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value.trim())}
+          ></input>
+        </div>
+
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="password2">Retype Password</label>
+          </div>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value.trim())}
+          ></input>
+          {passwordErr && <div className="err">{passwordErr}</div>}
+        </div>
+
+        <button className="bigUiActionButton signup" onClick={() => create()}>
+          Create
+        </button>
+      </div>
     </div>
   );
 }

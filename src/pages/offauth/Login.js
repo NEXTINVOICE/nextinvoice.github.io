@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import sha256 from "crypto-js/sha256";
 import { getProfiles } from "../../operations/localProfile";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/slicers/profile";
 import { setSellers } from "../../redux/slicers/sellers";
+import heroLogo from "../../res/heroLogo.png";
+import "./login.scss";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -60,28 +62,51 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <p>Login</p>
-      <input
-        type="text"
-        id="username"
-        name="username"
-        placeholder="username"
-        pattern="[A-Za-z]{3}"
-        value={username}
-        onChange={(e) => setUsername(e.target.value.trim())}
-      ></input>
-      <div>{usernameErr}</div>
-      <input
-        type="text"
-        id="password"
-        name="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value.trim())}
-      ></input>
-      <div>{passwordErr}</div>
-      <button onClick={() => doLogin()}>Login</button>
+    <div className="loginPage">
+      <div className="heroHeader">
+        <img src={heroLogo} alt="next invoice" />
+        <p>
+          Next <span>Invoice</span>
+        </p>
+      </div>
+      <div className="loginForm">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="username">Username</label>
+          </div>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            pattern="[A-Za-z]{3}"
+            value={username}
+            onChange={(e) => setUsername(e.target.value.trim())}
+          ></input>
+          {usernameErr && <div className="err">{usernameErr}</div>}
+        </div>
+
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="password">Password</label>
+          </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value.trim())}
+          ></input>
+          {passwordErr && <div className="err">{passwordErr}</div>}
+        </div>
+
+        <div className="authSwitchTip">
+          Don’t have account? <Link to="/create">Sign Up</Link>
+        </div>
+
+        <button className="bigUiActionButton login" onClick={() => doLogin()}>
+          LOGIN
+        </button>
+      </div>
     </div>
   );
 }

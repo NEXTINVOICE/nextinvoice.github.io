@@ -1,0 +1,32 @@
+// .loginPage inherits headerLogoSet from main.scss
+
+
+.loginPage, .signupPage {
+    gap: 1rem;
+
+    .loginForm, .signupForm {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        // transform: scale(.8);
+    }
+
+    .authSwitchTip {
+        font-size: .9rem;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .login, .signup {
+        align-self: flex-end;
+    }
+}
