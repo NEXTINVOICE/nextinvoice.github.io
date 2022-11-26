@@ -146,6 +146,7 @@
         flex-direction: column;
         overflow: auto;
         height: min-content;
+        gap: .2rem;
 
 
         .item {
@@ -174,6 +175,16 @@
 
             &:hover {
                 background: rgba(0, 0, 0, 0.04);
+            }
+        }
+
+        .item.selected {
+            background: rgba(0, 71, 255, 0.74);
+            * {
+                color: white;
+            }
+            .itemName {
+                font-weight: 500;
             }
         }
     }

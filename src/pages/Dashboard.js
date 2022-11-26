@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Outlet, useNavigate, useOutlet } from "react-router-dom";
+import { useNavigate, useOutlet, useMatch } from "react-router-dom";
 import { getProfiles, saveProfiles } from "../operations/localProfile";
 import { logout } from "../redux/slicers/profile";
 import heroLogo from "../res/logo2.png";
@@ -13,6 +13,9 @@ export default function Dashboard() {
   const sellers = useSelector((store) => store.sellers);
   const navigate = useNavigate();
   const outlet = useOutlet();
+
+  const isSellersRoute = useMatch("/dashboard/sellers");
+  const isSellerCreateRoute = useMatch("/dashboard/seller/create");
 
   useEffect(() => {
     if (!profile.user) {
@@ -84,7 +87,10 @@ export default function Dashboard() {
           <div className="sectionHeader">Actions</div>
         </div>
         <div className="sidebarActionList customScroll">
-          <div onClick={() => navigate("/dashboard/sellers")} className="item">
+          <div
+            onClick={() => navigate("/dashboard/sellers")}
+            className={`item ${isSellersRoute && "selected"}`}
+          >
             <div className="iconCont">
               <i className="ri-arrow-right-s-line"></i>
             </div>
@@ -92,7 +98,7 @@ export default function Dashboard() {
           </div>
           <div
             onClick={() => navigate("/dashboard/seller/create")}
-            className="item"
+            className={`item ${isSellerCreateRoute && "selected"}`}
           >
             <div className="iconCont">
               {/* <i className="ri-arrow-right-s-line"></i> */}
