@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'remixicon/fonts/remixicon.css';
+
 html, body {
     margin: 0;
     padding: 0;
+}
+
+html * {
+    color: #484848;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -62,4 +70,33 @@ html, body {
     --accentGreenText: #5A741D;
     --accentGreenTextLight: #26350D;
     --accentGreenTextDark: #B3D172;
+}
+
+
+// Generic Button
+.anchorButton {
+    text-decoration: none;
+    background: #3E58BE;
+    color: white;
+    font-size: .8rem;
+    padding: .3rem .8rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 4px;
+    transition: transform 300ms ease, filter 300ms ease;
+
+    i {
+        color: currentColor;
+    }
+
+
+    &:hover {
+        transform: scale(1.02);
+        filter: brightness(1.1);
+    }
+
+    &:active {
+        transform: scale(.98);
+    }
 }
