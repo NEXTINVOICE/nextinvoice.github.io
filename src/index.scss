@@ -157,3 +157,61 @@ html * {
         transform: scale(.98);
     }
 }
+
+.sectionHeader {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .6rem;
+    letter-spacing: 7px;
+    color: #4D5B81;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 1rem;
+        height: .12rem;
+        background: #4D5B81;
+        left: 0;
+        bottom: -.5rem;
+    }
+}
+
+.uiTextOnlyButton {
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.customScroll {
+    &::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 100px;
+      }
+      
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 100px;
+        
+      }
+      
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 100px;
+      }
+      
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+}

@@ -1,0 +1,111 @@
+.boardWrapper {
+    padding: 2rem 3rem;
+    color: #484848;
+    
+    .boardTitle {
+        font-weight: 700;
+        font-size: 3rem;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+    }
+
+    .tipList {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        gap: 1.5rem;
+
+        .tipCard {
+           
+            position: relative;
+            background: var(--temp-var-color1);
+            width: 17rem;
+            border-radius: 7px;
+            padding: 1rem;
+
+            * {
+                color: var(--temp-var-color2);
+            }
+
+            .closeBtn {
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 1.5rem;
+                margin: .3rem .5rem;
+            }
+
+            .tCont {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                i { 
+                    font-size: 1.5rem;
+                }
+
+                .tipTitle {
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+            }
+
+            .tipInfo {
+                color: var(--temp-var-color3);
+                margin-top: .2rem;
+                padding-left: 2.5rem;
+                font-size: .85rem;
+                line-height: 1.5rem;
+            }
+
+            .tipActions {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                margin-top: .5rem;
+                gap: 1rem;
+
+                * {
+                    cursor: pointer;
+                    background: var(--temp-var-color2);
+                    color: white;
+                    padding: .3rem .8rem;
+                    font-size: .9rem;
+                    border-radius: 100px;
+                    min-width: 3rem;
+                    text-align: center;
+                    letter-spacing: .07rem;
+                    border: 2px solid transparent
+                }
+
+                .optional {
+                    background: transparent;
+                    border: 2px solid var(--temp-var-color4);
+                    color: var(--temp-var-color2);
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .tipCard.alert { 
+            --temp-var-color1: rgba(255, 131, 62, 0.31);
+            --temp-var-color2: #84421E;
+            --temp-var-color3: #484848;
+            --temp-var-color4: #84421e3d;
+
+            .tCont {
+                i { 
+                    transform: translateY(-.2rem);
+                }
+            }
+        }
+
+        .tipCard.info { 
+            --temp-var-color1: rgba(62, 185, 255, 0.31);
+            --temp-var-color2: #1D5372;
+            --temp-var-color3: #484848;
+            --temp-var-color4: #1d537246;
+        }
+    }
+}
