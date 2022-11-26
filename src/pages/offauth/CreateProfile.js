@@ -114,7 +114,7 @@ export default function CreateProfile() {
         </div>
 
         <button className="bigUiActionButton signup" onClick={() => create()}>
-          Create
+          Sign Up
         </button>
       </div>
     </div>
