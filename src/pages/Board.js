@@ -25,6 +25,7 @@ export default function Board() {
       }
     }
   }, [sellers]);
+
   return (
     <div className="boardWrapper">
       <div className="boardTitle">Dashboard</div>

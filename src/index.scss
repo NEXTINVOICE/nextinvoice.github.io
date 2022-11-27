@@ -190,6 +190,43 @@ html * {
     }
 }
 
+.uiToggleSwitcher {
+    cursor: pointer;
+    position: relative;
+    background: #484848;
+    width: 2.9rem;
+    height: 1.2rem;
+    border-radius: 100px;
+    transition: color 300ms;
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: .3rem;
+        transform: translateY(-50%);
+        content: '';
+        width: .8rem;
+        height: .8rem;
+        background: white;
+        border-radius: inherit;
+        transition: left 300ms, right 300ms;
+        
+    }
+
+}
+
+.uiToggleSwitcher.disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+.uiToggleSwitcher.selected {
+    background: #1D5372;
+    &:after {
+        left: 1.8rem;
+    }
+}
+
 
 .customScroll {
     &::-webkit-scrollbar {

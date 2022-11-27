@@ -247,5 +247,10 @@
     .sectionHeader {
         letter-spacing: 7px;
         color: #484848;
+        margin-bottom: 1rem;
+
+        &::after {
+            background: currentColor;
+        }
     }
 }
