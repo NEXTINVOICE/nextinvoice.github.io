@@ -50,7 +50,7 @@ export default function Dashboard() {
         <div className="myAccountBar">
           <div className="fCont">
             <i className="ri-user-2-line"></i>
-            <p>{profile.user}</p>
+            <p className="ellipsis">{profile.user}</p>
           </div>
           <button onClick={() => doLogout()}>
             <i className="ri-logout-box-line"></i>
@@ -66,7 +66,7 @@ export default function Dashboard() {
                 </div>
 
                 <div className="primarySellerCard">
-                  <div className="header">{item.name}</div>
+                  <div className="header ellipsis">{item.name}</div>
                   <div>
                     <i className="ri-barcode-box-fill"></i>
                     <div className="gstin">{item.gstNumber}</div>
@@ -77,7 +77,11 @@ export default function Dashboard() {
                   >
                     Change
                   </button>
-                  <img className="logo" src={heroLogo} alt="Next invoice" />
+                  <img
+                    className="logo"
+                    src={item.photoUrl || heroLogo}
+                    alt="Next invoice"
+                  />
                 </div>
               </>
             )

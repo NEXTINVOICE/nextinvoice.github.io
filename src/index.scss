@@ -252,3 +252,9 @@ html * {
         background: #555;
       }
 }
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
