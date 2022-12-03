@@ -6,6 +6,7 @@ import { logout } from "../redux/slicers/profile";
 import heroLogo from "../res/logo2.png";
 import Board from "./Board";
 import "./dashboard.scss";
+import "../components/Modal.scss";
 
 export default function Dashboard() {
   const dispatch = useDispatch();

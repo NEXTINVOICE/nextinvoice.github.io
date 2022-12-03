@@ -1,8 +1,7 @@
 import React from "react";
 import "./DesignSetModal.scss";
-import DesignType from "./DesignType";
 
-export default function DesignSetModal({ show, sets, apply, enabled }) {
+export default function SignSetModal({ show, sets, apply, enabled }) {
   return (
     <div className="modal">
       <div className="modal-cont">
@@ -15,7 +14,7 @@ export default function DesignSetModal({ show, sets, apply, enabled }) {
           <i className="ri-close-line"></i>
         </div>
         <div className="modalHeader">
-          <div className="title">Invoice Styles</div>
+          <div className="title">Digital Signature Type</div>
         </div>
 
         <div className="customScroll">
@@ -35,10 +34,9 @@ export default function DesignSetModal({ show, sets, apply, enabled }) {
                     <i className="ri-check-double-line"></i>
                   </div>
                 )}
-                <div className="elementType">
+                <div className="elementType alt">
                   <div className="wrapper">
-                    <img src={item.photo} alt="Invoice type"></img>
-                    <div>{item.name}</div>
+                    <img src={item.photo} alt="signature type"></img>
                   </div>
                 </div>
               </div>

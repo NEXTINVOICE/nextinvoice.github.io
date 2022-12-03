@@ -5,6 +5,7 @@ import AccentSetModal from "../../components/AccentSetModal";
 import AccentType from "../../components/AccentType";
 import DesignSetModal from "../../components/DesignSetModal";
 import DesignType from "../../components/DesignType";
+import SignSetModal from "../../components/SignSetModal";
 import { sellerNormalizer } from "../../operations/normalizer";
 import {
   invoiceDesignSets,
@@ -542,14 +543,16 @@ export default function EditSeller() {
           show={setShowAccentType}
           sets={accentSets}
           apply={setAccentType}
+          enabled={accentType}
         />
       )}
 
       {showDigitalSignType && (
-        <DesignSetModal
+        <SignSetModal
           show={setShowDigitalSignType}
           sets={signatureDesignSets}
           apply={setDigitalSignType}
+          enabled={digitalSignType}
         />
       )}
       {showInvoiceTypeModal && (
@@ -557,6 +560,7 @@ export default function EditSeller() {
           show={setShowInvoiceTypeModal}
           sets={invoiceDesignSets}
           apply={setInvoiceDesignType}
+          enabled={invoiceDesignType}
         />
       )}
     </div>

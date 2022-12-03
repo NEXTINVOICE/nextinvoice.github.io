@@ -185,6 +185,9 @@ html * {
             color: white;
             border-radius: 7px;
 
+            &:hover {
+                filter: brightness(.9);
+            }
         }
     }
 
@@ -240,6 +243,8 @@ html * {
 }
 
 .sectionHeader.box {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     &::after {
         content: '';
         position: absolute;
