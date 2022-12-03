@@ -14,6 +14,7 @@ import {
 import { sellerValidator } from "../../operations/validators";
 import { resetSeller } from "../../redux/slicers/seller";
 import { replaceSeller } from "../../redux/slicers/sellers";
+import "./editSeller.scss";
 
 export default function EditSeller() {
   const seller = useSelector((store) => store.seller);
@@ -124,210 +125,417 @@ export default function EditSeller() {
   if (invalidRoute) return <div>404 (Invalid Route)</div>;
 
   return (
-    <div>
-      <h2>Edit Seller</h2>
-      <h3>Seller Name: {seller.name}</h3>
-      <div className={`${sellers.length === 1 && "disabled"}`}>
-        <input
-          type="checkbox"
-          id="primarySeller"
-          name="primarySeller"
-          value="primarySeller"
-          checked={isPrimary}
-          onChange={() => setIsPrimary(!isPrimary)}
-        />
-        <label htmlFor="primarySeller">Primary Seller</label>
+    <div className="boardWrapper sellersPage sellerPage customScroll2">
+      <div className="boardTitle">
+        <i onClick={() => navigate(-1)} className="ri-arrow-left-s-line"></i>
+        Edit Seller
       </div>
-      <div>
-        <h4>Personal</h4>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          name="name"
-          placeholder="name"
-        ></input>
-        <input
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          type="text"
-          name="address"
-          placeholder="address"
-        ></input>
-        <input
-          value={mob}
-          onChange={(e) => setMob(e.target.value)}
-          type="text"
-          name="mobile"
-          placeholder="mobile"
-        ></input>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          type="text"
-          name="email"
-          placeholder="email"
-        ></input>
-        <input
-          value={photoUrl}
-          onChange={(e) => setPhotoUrl(e.target.value)}
-          type="text"
-          name="photo"
-          placeholder="photo"
-        ></input>
-        <input
-          value={pan}
-          onChange={(e) => setPan(e.target.value)}
-          type="text"
-          name="pan"
-          placeholder="pan"
-        ></input>
-        <input
-          value={gstNumber}
-          onChange={(e) => setGstNumber(e.target.value)}
-          type="text"
-          name="gst number"
-          placeholder="gst number"
-        ></input>
-      </div>
+      <div className="scrollWrapper">
+        <div className="sectionHeaderWrapper">
+          <div className="sectionHeader">Editing {seller.name}</div>
+        </div>
 
-      <div>
-        <h4>Bank</h4>
+        <div className="sellerListCard sellerCard">
+          {seller.photoUrl ? (
+            <div
+              style={{ backgroundImage: `url('${seller.photoUrl}')` }}
+              className="logoCont"
+            ></div>
+          ) : (
+            <div className="logoCont optional">
+              <i class="ri-store-3-fill"></i>
+            </div>
+          )}
+
+          <div className="infoCont">
+            <div className="sellerName">{seller.name}</div>
+            <div className="sellerAddress">{seller.address}</div>
+          </div>
+          <div className="actionCont">
+            <div
+              onClick={() => {
+                setIsPrimary(!isPrimary);
+              }}
+              className={`uiToggleSwitcher ${isPrimary && "selected"} ${
+                sellers.length === 1 && "disabled"
+              }`}
+            ></div>
+          </div>
+        </div>
+
+        <div className="sectionHeaderWrapper extraMargin">
+          <div className="sectionHeader box">Personal</div>
+        </div>
+
+        <div className="inputSets">
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="name">Seller Name</label>
+            </div>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              name="name"
+              id="name"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="address">Seller Address</label>
+            </div>
+            <textarea
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              type="text"
+              name="address"
+              id="address"
+            ></textarea>
+          </div>
+        </div>
+
+        <div className="inputSets">
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="mobile">Mobile Number</label>
+            </div>
+            <input
+              value={mob}
+              onChange={(e) => setMob(e.target.value)}
+              type="number"
+              name="mobile"
+              id="mobile"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="email">Email</label>
+            </div>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              name="email"
+              id="email"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="photo">Logo URL</label>
+            </div>
+            <input
+              value={photoUrl}
+              onChange={(e) => setPhotoUrl(e.target.value)}
+              type="text"
+              name="photo"
+              id="photo"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="pan">PAN</label>
+            </div>
+            <input
+              value={pan}
+              onChange={(e) => setPan(e.target.value)}
+              type="text"
+              name="pan"
+              id="pan"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="gstNumber">GST Number</label>
+            </div>
+            <input
+              value={gstNumber}
+              onChange={(e) => setGstNumber(e.target.value)}
+              type="text"
+              name="gstNumber"
+              id="gstNumber"
+            ></input>
+          </div>
+        </div>
+
+        <div className="sectionHeaderWrapper extraMargin">
+          <div className="sectionHeader box">Bank Details</div>
+        </div>
+
+        <div className="toggleElem">
+          <div>Include Bank Details</div>
+          <div
+            onClick={() => {
+              setIncludeBankDetails(!includeBankDetails);
+            }}
+            className={`uiToggleSwitcher ${includeBankDetails && "selected"} ${
+              sellers.length === 1 && "disabled"
+            }`}
+          ></div>
+        </div>
+
+        <div className={`inputSets ${!includeBankDetails && "disabled"}`}>
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="accountHolderName">Account Holder</label>
+            </div>
+            <input
+              value={accountHolderName}
+              onChange={(e) => setAccountHolderName(e.target.value)}
+              type="text"
+              name="accountHolderName"
+              id="accountHolderName"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="accountNumber">Account Number</label>
+            </div>
+            <input
+              value={accountNumber}
+              onChange={(e) => setAccountNumber(e.target.value)}
+              type="text"
+              name="accountNumber"
+              id="accountNumber"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="bankName">Bank Name</label>
+            </div>
+            <input
+              value={bankName}
+              onChange={(e) => setBankName(e.target.value)}
+              type="text"
+              name="bankName"
+              id="bankName"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="bankBranch">Bank Branch</label>
+            </div>
+            <input
+              value={bankBranch}
+              onChange={(e) => setBankBranch(e.target.value)}
+              type="text"
+              name="bankBranch"
+              id="bankBranch"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="bankIFSC">Bank IFSC</label>
+            </div>
+            <input
+              value={bankIFSC}
+              onChange={(e) => setBankIFSC(e.target.value)}
+              type="text"
+              name="bankIFSC"
+              id="bankIFSC"
+            ></input>
+          </div>
+        </div>
+
+        <div className="toggleElem">
+          <div>Include Terms and conditions</div>
+          <div
+            onClick={() => {
+              setIncludeTermsAndConditions(!includeTermsAndConditions);
+            }}
+            className={`uiToggleSwitcher ${
+              includeTermsAndConditions && "selected"
+            } ${sellers.length === 1 && "disabled"}`}
+          ></div>
+        </div>
+
+        <div
+          className={`inputSets ${!includeTermsAndConditions && "disabled"}`}
+        >
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="termsAndConditions">Terms and Conditions</label>
+            </div>
+            <textarea
+              placeholder="Write Something"
+              className="customScroll"
+              value={termsAndConditions}
+              onChange={(e) => setTermsAndConditions(e.target.value)}
+              type="text"
+              name="termsAndConditions"
+              id="termsAndConditions"
+            ></textarea>
+          </div>
+        </div>
+
+        <div className="sectionHeaderWrapper extraMargin">
+          <div className="sectionHeader box">Digital signature</div>
+        </div>
+
+        <div className="inputSets">
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="digitalSignName">Digital Signature</label>
+            </div>
+            <input
+              value={digitalSignName}
+              onChange={(e) => setDigitalSignName(e.target.value)}
+              type="text"
+              name="digitalSignName"
+              id="digitalSignName"
+            ></input>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label>Digital Signature Type</label>
+            </div>
+            <div className="elementType alt">
+              <div className="wrapper">
+                <img
+                  src={signatureDesignSets[digitalSignType].photo}
+                  alt="signature type"
+                ></img>
+              </div>
+
+              <i
+                onClick={() => setShowDigitalSignType(!showDigitalSignType)}
+                className="ri-edit-box-line"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div className="sectionHeaderWrapper extraMargin">
+          <div className="sectionHeader box">Invoice Preferences</div>
+        </div>
+
+        <div className="inputSets">
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label>Invoice Style</label>
+            </div>
+            <div className="elementType">
+              <div className="wrapper">
+                <img
+                  src={invoiceDesignSets[invoiceDesignType].photo}
+                  alt="Invoice type"
+                ></img>
+                <div>{invoiceDesignSets[invoiceDesignType].name}</div>
+              </div>
+
+              <i
+                onClick={() => setShowInvoiceTypeModal(!showInvoiceTypeModal)}
+                className="ri-edit-box-line"
+              ></i>
+            </div>
+          </div>
+
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label>Invoice Theme</label>
+            </div>
+            <div className="elementType">
+              <div className="wrapper">
+                <div className="accentBlock">
+                  <div
+                    style={{
+                      background: `var(--${accentSets[accentType].palettes[3].background})`,
+                    }}
+                    className="accent"
+                  >
+                    <div
+                      style={{
+                        background: `var(--${accentSets[accentType].palettes[0].background})`,
+                      }}
+                      className="accent"
+                    >
+                      <div
+                        style={{
+                          background: `var(--${accentSets[accentType].palettes[2].background})`,
+                        }}
+                        className="accent"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div>{accentSets[accentType].name}</div>
+              </div>
+
+              <i
+                onClick={() => setShowAccentType(!showAccentType)}
+                className="ri-edit-box-line"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div className="inputSets" style={{ marginBottom: "3rem" }}>
+          <div className="toggleElem">
+            <div>Generate QR</div>
+            <div
+              onClick={() => {
+                setGenerateQr(!generateQr);
+              }}
+              className={`uiToggleSwitcher ${generateQr && "selected"} ${
+                sellers.length === 1 && "disabled"
+              }`}
+            ></div>
+          </div>
+
+          <div className="toggleElem">
+            <div>Generate Invoice File</div>
+            <div
+              onClick={() => {
+                setGenerateInv(!generateInv);
+              }}
+              className={`uiToggleSwitcher ${generateInv && "selected"} ${
+                sellers.length === 1 && "disabled"
+              }`}
+            ></div>
+          </div>
+        </div>
+
         <div>
-          <input
-            type="checkbox"
-            id="includeBankDetails"
-            name="includeBankDetails"
-            value="includeBankDetails"
-            checked={includeBankDetails}
-            onChange={() => setIncludeBankDetails(!includeBankDetails)}
-          />
-          <label htmlFor="includeBankDetails">Include Bank details</label>
-        </div>
-        <div className={`${!includeBankDetails && "disabled"}`}>
-          <input
-            value={accountHolderName}
-            onChange={(e) => setAccountHolderName(e.target.value)}
-            type="text"
-            name="bank accountHolder"
-            placeholder="Account Holder Name"
-          ></input>
-          <input
-            value={accountNumber}
-            onChange={(e) => setAccountNumber(e.target.value)}
-            type="text"
-            name="bank accountNumber"
-            placeholder="Account Number"
-          ></input>
-          <input
-            value={bankName}
-            onChange={(e) => setBankName(e.target.value)}
-            type="text"
-            name="bank name"
-            placeholder="bank name"
-          ></input>
-          <input
-            value={bankBranch}
-            onChange={(e) => setBankBranch(e.target.value)}
-            type="text"
-            name="bank branch"
-            placeholder="bank branch"
-          ></input>
-          <input
-            value={bankIFSC}
-            onChange={(e) => setBankIFSC(e.target.value)}
-            type="text"
-            name="bank ifsc"
-            placeholder="bank ifsc"
-          ></input>
-        </div>
-
-        <div>
-          <input
-            type="checkbox"
-            id="includeTermsAndConditions"
-            name="includeTermsAndConditions"
-            value="includeTermsAndConditions"
-            checked={includeTermsAndConditions}
-            onChange={() =>
-              setIncludeTermsAndConditions(!includeTermsAndConditions)
-            }
-          />
-          <label htmlFor="includeTermsAndConditions">
-            Include Terms and conditions
-          </label>
-        </div>
-        <div className={`${!includeTermsAndConditions && "disabled"}`}>
-          <textarea
-            value={termsAndConditions}
-            onChange={(e) => setTermsAndConditions(e.target.value)}
-            type="textarea"
-            name="terms and conditions"
-            placeholder="terms and conditions"
-          ></textarea>
+          {validation.map((item, index) => (
+            <div key={index}>{item}</div>
+          ))}
         </div>
       </div>
+      <div className="bottomActionBar">
+        <button className="uiColoredIcoBtn" onClick={() => doEditSeller()}>
+          <i className="ri-save-2-line"></i>Save
+        </button>
+        <button
+          className="uiColoredIcoBtn red"
+          onClick={() => navigate(-1, { replace: true })}
+        >
+          <i className="ri-close-circle-line"></i>Cancel
+        </button>
 
-      <div>
-        <h4>Digital signature</h4>
-        <input
-          value={digitalSignName}
-          onChange={(e) => setDigitalSignName(e.target.value)}
-          type="text"
-          name="digital sign name"
-          placeholder="digital sign name"
-        ></input>
-        <br></br>
-        <br></br>
-        <h5>Signature Style</h5>
-        <div onClick={() => setShowDigitalSignType(!showDigitalSignType)}>
-          <DesignType value={digitalSignType} sets={signatureDesignSets} />
-        </div>
+        <button
+          className="uiColoredIcoBtn green disabled"
+          onClick={() => navigate(-1, { replace: true })}
+        >
+          <i className="ri-restart-fill"></i>Reset
+        </button>
+
+        <button
+          className="uiColoredSpecBtn"
+          onClick={() => navigate(-1, { replace: true })}
+        >
+          <i className="ri-error-warning-line"></i>
+          <div>Validation Error</div>
+        </button>
       </div>
-
-      <div>
-        <h4>Invoice Preferences</h4>
-        <div onClick={() => setShowInvoiceTypeModal(!showInvoiceTypeModal)}>
-          <DesignType value={invoiceDesignType} sets={invoiceDesignSets} />
-        </div>
-
-        <div onClick={() => setShowAccentType(!showAccentType)}>
-          <AccentType value={accentType} sets={accentSets} />
-        </div>
-      </div>
-
-      <div>
-        <input
-          type="checkbox"
-          id="generateQr"
-          name="generateQr"
-          value="generateQr"
-          checked={generateQr}
-          onChange={() => setGenerateQr(!generateQr)}
-        />
-        <label htmlFor="generateQr">Generate QR</label>
-      </div>
-
-      <div>
-        <input
-          type="checkbox"
-          id="generateInv"
-          name="generateInv"
-          value="generateInv"
-          checked={generateInv}
-          onChange={() => setGenerateInv(!generateInv)}
-        />
-        <label htmlFor="generateInv">Generate Invoice File</label>
-      </div>
-
-      <div>
-        {validation.map((item, index) => (
-          <div key={index}>{item}</div>
-        ))}
-      </div>
-
-      <button onClick={() => doEditSeller()}>Apply</button>
-      <button onClick={() => navigate(-1, { replace: true })}>Cancel</button>
 
       {showAccentType && (
         <AccentSetModal

@@ -11,6 +11,15 @@ html * {
     font-family: 'Poppins', sans-serif;
 }
 
+@media screen and (max-height: 719px) {
+    html {
+        // transform: scale(.75, .75);
+        zoom:.75;
+        zoom: 75%;
+
+    }
+}
+
 
 :root {
     //Accent Colors
@@ -126,6 +135,59 @@ html * {
         outline-color: #979797;
     }
 
+    textarea {
+        background: #F1F1F1;
+        border: .16rem solid #D9D9D9;
+        font-weight: 500;
+        padding: .6rem .6rem;
+        font-size: 1rem;
+        border-radius: 7px;
+        width: 14rem;
+        min-height: 8rem;
+        outline-color: #979797;
+        resize: none;
+    }
+
+    .elementType {
+        position: relative;
+        padding: .6rem .6rem;
+        width: 14rem;
+        min-height: 8rem;
+        max-height: 8rem;
+        background: #F1F1F1;
+        border: .16rem solid transparent;
+        border-radius: 7px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .wrapper {
+            overflow: hidden;
+            border-radius: 7px;
+            img {
+                width: 12rem;
+                height: 7rem;
+                object-fit: cover;
+                border-radius: 7px;
+            }
+        }
+
+        i {
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 1rem;
+            padding: .6rem;
+            margin: .3rem;
+            background: #484848;
+            color: white;
+            border-radius: 7px;
+
+        }
+    }
+
     .err {
         width: 14rem;
         font-size: .7rem;
@@ -177,6 +239,17 @@ html * {
     }
 }
 
+.sectionHeader.box {
+    &::after {
+        content: '';
+        position: absolute;
+        width: .5rem;
+        height: .5rem;
+        left: 0;
+        bottom: -.6rem;
+    }
+}
+
 .uiTextOnlyButton {
     cursor: pointer;
     border: none;
@@ -194,17 +267,20 @@ html * {
     cursor: pointer;
     position: relative;
     background: #484848;
-    width: 2.9rem;
+    min-width: 2.2rem;
     height: 1.2rem;
     border-radius: 100px;
     transition: color 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: .25rem;
+    padding-right: .25rem;
 
     &::after {
-        position: absolute;
-        top: 50%;
-        left: .3rem;
-        transform: translateY(-50%);
+        position: relative;
         content: '';
+        left: 0;
         width: .8rem;
         height: .8rem;
         background: white;
@@ -223,7 +299,81 @@ html * {
 .uiToggleSwitcher.selected {
     background: #1D5372;
     &:after {
-        left: 1.8rem;
+        left: 1.45rem;
+    }
+}
+
+.uiColoredIcoBtn {
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+    padding: .7rem 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    background: #3E58BE;
+    color: white;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: 1px;
+
+    i {
+        color: currentColor;
+        font-weight: normal;
+        font-size: 1.2rem;
+    }
+
+    transition: transform 300ms ease;
+    &:hover {
+        transform: translateY(-.2rem);
+    }
+
+    &:active {
+        transform: scale(.9);
+    }
+}
+
+.uiColoredIcoBtn.red {
+    background: #FFE5DD;
+    color: #BD5434;
+}
+
+.uiColoredIcoBtn.green {
+    background: #F0FFDD;
+    color: #43562A;
+}
+
+.uiColoredSpecBtn {
+    color: #AC4242;
+    background: #FFD6D6;
+    cursor: pointer;
+    border: 0;
+    border-radius: 100px;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    padding: 0rem;
+    padding-right: 1rem;
+
+    div {
+        border-radius: 5px;
+        color: #AC4242;
+    }
+
+    i {
+        background: rgba(255, 134, 134, 0.58);
+        color: #AC4242;
+        border-radius: 100px;
+        font-size: 2rem;
+        font-weight: normal;
+        padding: .22rem;
+        outline: 4px solid white;
     }
 }
 
@@ -252,6 +402,31 @@ html * {
         background: #555;
       }
 }
+
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 100px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 100px;
+        
+      }
+      
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 100px;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
 
 .ellipsis {
     white-space: nowrap;

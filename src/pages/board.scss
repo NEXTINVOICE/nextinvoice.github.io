@@ -1,8 +1,11 @@
 .boardWrapper {
     padding: 2rem 3rem;
+    padding-top: 8rem;
     color: #484848;
     
     .boardTitle {
+        top: 0;
+        position: fixed;
         font-weight: 700;
         font-size: 3rem;
         letter-spacing: 1px;
@@ -10,7 +13,10 @@
         display: inline-flex;
         align-items: center;
         gap: .5rem;
-
+        padding-top: 2rem;
+        width: 100%;
+        background: white;
+        z-index: 1;
         i {
             cursor: pointer;
             display: grid;

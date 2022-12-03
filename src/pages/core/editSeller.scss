@@ -1,0 +1,142 @@
+.sellerPage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+
+    .sectionHeader {
+        letter-spacing: 5px;
+    }
+    .scrollWrapper {
+        overflow-y: auto;
+        
+        margin-right: -2.5rem;
+        padding-right: 2rem;
+    }
+
+    .sellerCard {
+        margin-top: 1.5rem;
+    }
+
+    .extraMargin {
+        margin-top: 1.5rem;
+    }
+
+    .inputSets {
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .toggleElem {
+            width: 15.5rem;
+            margin: 1rem 0rem;
+        }
+    }
+
+    .toggleElem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 15.2rem;
+        
+        font-weight: 600;
+        font-size: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .elementType {
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            width: 100%;
+            gap: 1rem;
+
+            img {
+                width: 100% !important;
+                height: 8rem !important;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            div {
+                width: 100%;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            .accentBlock {
+                display: grid;
+                place-content: center;
+            }
+
+            *.accent {
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+            }
+
+            .accent {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 10px;
+                border-top-right-radius: 30px;
+                border-bottom-left-radius: 10px;
+                overflow: hidden;
+
+                
+
+                .accent {
+                    width: 3.6rem;
+                    height: 3.6rem;
+                    background: blue;
+                    border-top-right-radius: 17px;
+                    border-top-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 10px;
+                    
+
+                    .accent {
+                        width: 2.3rem;
+                        height: 2.3rem;
+                        background: green;
+                        border-top-right-radius: 10px;
+                        border-top-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+
+                
+            }
+        }
+    }
+
+    
+    .elementType.alt {
+        .wrapper {
+            display: grid;
+            grid-template-columns: unset;
+        }
+    }
+
+
+    .bottomActionBar {
+        background: white;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding-left: 22.3rem;
+        height: 5rem;
+        z-index: 0;
+        box-shadow: 0px -.5rem 47px hsla(0, 0%, 0%, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
