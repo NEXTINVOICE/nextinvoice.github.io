@@ -1,0 +1,84 @@
+.validationBox {
+    position: absolute;
+    background: white;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1.5rem;
+    width: 20rem;
+    box-shadow: 0px 4px 47.42px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 10px 0px 0px;
+    transition: bottom 300ms ease;
+    
+    display: flex;
+    flex-direction: column;
+    padding: .5rem .5rem;
+    gap: .5rem;
+
+    .top-bar {
+        display: flex;
+        justify-content: space-between;
+
+        .lCont {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+
+            .errorIcon {
+                width: 1.5rem;
+                height: 1.5rem;
+                outline: none;
+                aspect-ratio: 1 / 1;
+                font-size: 1.6rem;
+                display: grid;
+                place-content: center;
+            }
+
+            div {
+                font-weight: 700;
+            }
+        }
+
+        .hideIcon {
+            background: none;
+            color: #484848;
+            border-radius: 4px;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: grid;
+            place-content: center;
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.0392156863);
+            }
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+        padding-left: 3rem;
+        max-height: 8rem;
+        overflow-x: auto;
+        
+        div {
+            color: #484848;
+            font-weight: 500;
+            font-size: .8rem;
+            word-wrap: break-word;
+            line-break: anywhere;
+            text-align: left;
+
+            &:hover {
+                color: #AC4242;
+            }
+        }
+    }
+}
+
+.validationBox.hide {
+    bottom: -15rem;
+}

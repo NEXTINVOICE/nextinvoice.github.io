@@ -16,6 +16,7 @@ import { sellerValidator } from "../../operations/validators";
 import { resetSeller } from "../../redux/slicers/seller";
 import { replaceSeller } from "../../redux/slicers/sellers";
 import "./editSeller.scss";
+import ValidationBox from "./ValidationBox";
 
 export default function EditSeller() {
   const seller = useSelector((store) => store.seller);
@@ -71,7 +72,7 @@ export default function EditSeller() {
   const [showDigitalSignType, setShowDigitalSignType] = useState(false);
   const [showAccentType, setShowAccentType] = useState(false);
   const [showInvoiceTypeModal, setShowInvoiceTypeModal] = useState(false);
-
+  const [showValidationBox, setShowValidationBox] = useState(false);
   const doEditSeller = () => {
     const data = {
       name,
@@ -504,12 +505,6 @@ export default function EditSeller() {
             ></div>
           </div>
         </div>
-
-        <div>
-          {validation.map((item, index) => (
-            <div key={index}>{item}</div>
-          ))}
-        </div>
       </div>
       <div className="bottomActionBar">
         <button className="uiColoredIcoBtn" onClick={() => doEditSeller()}>
@@ -528,14 +523,22 @@ export default function EditSeller() {
         >
           <i className="ri-restart-fill"></i>Reset
         </button>
-
-        <button
-          className="uiColoredSpecBtn"
-          onClick={() => navigate(-1, { replace: true })}
-        >
-          <i className="ri-error-warning-line"></i>
-          <div>Validation Error</div>
-        </button>
+        {validation.length > 0 && (
+          <button
+            className="uiColoredSpecBtn validationBtn"
+            onClick={
+              !showValidationBox ? () => setShowValidationBox(true) : null
+            }
+          >
+            <ValidationBox
+              showValidationBox={showValidationBox}
+              setShowValidationBox={setShowValidationBox}
+              validation={validation}
+            />
+            <i className="ri-error-warning-line"></i>
+            <div>Validation Error</div>
+          </button>
+        )}
       </div>
 
       {showAccentType && (
