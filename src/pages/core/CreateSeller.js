@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AccentSetModal from "../../components/AccentSetModal";
-import AccentType from "../../components/AccentType";
 import DesignSetModal from "../../components/DesignSetModal";
-import DesignType from "../../components/DesignType";
 import SignSetModal from "../../components/SignSetModal";
 import { sellerNormalizer } from "../../operations/normalizer";
 import {
