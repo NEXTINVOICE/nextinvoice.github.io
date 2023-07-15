@@ -1,14 +1,69 @@
-.productList {
-    .productListTable {
-        display: flex;
-        flex-direction: column;
+.productListTable {
+    width: 100%;
+    max-width: 1366px;
+    border-collapse: collapse !important;
+    text-align: left;
+    border-radius: 7px;
+    overflow: hidden;
+    // border-spacing: 0 .5rem;
 
 
-        & > div {
-            display: grid;
-            grid-template-columns: repeat(9, 1fr);
+    td, th {
+        padding: .6rem;
+        letter-spacing: 1px;
+        font-size: .85rem;
+        font-weight: 500;
+    }
 
-            word-wrap: break-word;
+    tr:not(:first-child) {
+        // border: 2px red solid;
+        // background: var(--input-background);
+        border-radius: 10px;
+
+        td {
+            max-width: 10rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &:nth-child(odd) {
+            background: var(--dual);
+        }
+    
+        &:nth-child(even) {
+            background: var(--tone);
+        }
+    }
+
+    tr:first-child {
+        background: var(--foreground);
+        th {
+            color: var(--background);
+            font-weight: 500;
+            font-size: .9rem;
+        }
+    }
+
+    button {
+        padding: .2rem;
+        cursor: pointer;
+        border: 0;
+        background: transparent;
+        display: inline-flex;
+        place-content: center;
+        margin: 0;
+        margin-right: .5rem;
+        border-radius: 5px;
+        transition: background 200ms;
+
+        i {
+            font-size: 1.3rem;
+        }
+
+        &:hover {
+            background: var(--border);
         }
     }
 }
+
