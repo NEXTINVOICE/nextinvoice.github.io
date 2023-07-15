@@ -144,6 +144,15 @@ export default function AddProduct() {
           </button>
         </div>
       </div>
+      {showHsnModal && (
+          <HsnModal
+            show={setShowHsnModal}
+            setMainHsn={setHsn}
+            setMainGst={setGst}
+            mainHsn={hsn}
+            mainGst={gst}
+          />
+        )}
     </>
   );
 

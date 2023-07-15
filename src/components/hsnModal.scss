@@ -24,3 +24,66 @@
         }
     }
 }
+
+
+.hsn.modal .modal-cont {
+    padding-bottom: 4rem !important;
+    height: auto;
+
+    .topCont {
+        display: flex;
+        gap: 1rem;
+
+        .cont {
+            min-width: 15.5rem;
+
+            & > *:nth-child(2) {
+                margin-top: 1.4rem;
+            }
+
+            .currSelection {
+                font-size: 1rem;
+                margin-bottom: .4rem;
+
+                span {
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    margin-right: .5rem;
+                }
+            }
+
+            .selectionType {
+                margin-top: 1.7rem;
+                display: flex;
+                gap: 1rem;
+
+                button {
+                    border: none;
+                    background: var(--btn-bg);
+                    color: var(--background);
+                    font-size: .75rem;
+                    font-weight: 500;
+                    letter-spacing: .6px;
+                    padding: .5rem .7rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    
+                    &.off {
+                        font-weight: 700 !important;
+                        background: var(--btn-bg2) !important;
+                        color: var(--btn-fg) !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottomCont {
+        position: absolute;
+        bottom: 1rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        width: calc(100% - 4rem);
+    }
+}
