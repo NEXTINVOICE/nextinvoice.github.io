@@ -7,47 +7,70 @@ export default function Customer() {
   const customer = useSelector((state) => state.customer);
 
   return (
-    <div style={{ border: "1px solid black" }}>
-      <h2>Customer Information</h2>
+    <>
+      <div className="inputSets">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="name">Customer Name</label>
+          </div>
+          <input
+            value={customer.name}
+            onChange={(e) => {
+              dispatch(setCustomerItem({ name: e.target.value }));
+            }}
+            type="text"
+            name="name"
+            id="name"
+          ></input>
+        </div>
 
-      <div>
-        <input
-          value={customer.name}
-          onChange={(e) => {
-            dispatch(setCustomerItem({ name: e.target.value }));
-          }}
-          type="text"
-          name="name"
-          placeholder="name"
-        ></input>
-        <input
-          value={customer.address}
-          onChange={(e) => {
-            dispatch(setCustomerItem({ address: e.target.value }));
-          }}
-          type="text"
-          name="address"
-          placeholder="address"
-        ></input>
-        <input
-          value={customer.mob}
-          onChange={(e) => {
-            dispatch(setCustomerItem({ mob: e.target.value }));
-          }}
-          type="text"
-          name="mobile"
-          placeholder="mobile"
-        ></input>
-        <input
-          value={customer.email}
-          onChange={(e) => {
-            dispatch(setCustomerItem({ email: e.target.value }));
-          }}
-          type="text"
-          name="email"
-          placeholder="email"
-        ></input>
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="address">Customer Address</label>
+          </div>
+          <textarea
+            value={customer.address}
+            onChange={(e) => {
+              dispatch(setCustomerItem({ address: e.target.value }));
+            }}
+            type="text"
+            name="address"
+            id="address"
+          ></textarea>
+        </div>
       </div>
-    </div>
+
+      <div className="inputSets">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="mobile">Mobile Number</label>
+          </div>
+          <input
+            value={customer.mob}
+            onChange={(e) => {
+              dispatch(setCustomerItem({ mob: e.target.value }));
+            }}
+            type="text"
+            name="mobile"
+            id="mobile"
+          ></input>
+        </div>
+
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="email">Email</label>
+          </div>
+          <input
+            value={customer.email}
+            onChange={(e) => {
+              dispatch(setCustomerItem({ email: e.target.value }));
+            }}
+            type="text"
+            name="email"
+            id="email"
+          ></input>
+        </div>
+      </div>
+    </>
   );
 }

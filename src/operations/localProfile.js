@@ -26,3 +26,10 @@ export const setProfile = (data) => {
     localStorage.setItem("nxtInvProfiles", JSON.stringify(profiles));
   }
 };
+
+export const save = (sellers, user) => {
+  const profiles = getProfiles();
+  const currProfile = profiles.find((item) => item.user === user);
+  currProfile.data = sellers;
+  saveProfiles(profiles);
+};

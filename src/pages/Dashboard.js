@@ -40,8 +40,8 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="dashboard">
-      <div className="sidebar">
+    <div key="main" className="dashboard">
+      <div key="sidebar" className="sidebar">
         <div onClick={() => navigate("/dashboard")} className="sidebarTopLogo">
           <img src={heroLogo} alt="Next invoice" />
           <p>
@@ -62,11 +62,11 @@ export default function Dashboard() {
           (item) =>
             item.isPrimary && (
               <>
-                <div className="sectionHeaderWrapper">
+                <div key="seller" className="sectionHeaderWrapper">
                   <div className="sectionHeader">Primary Seller</div>
                 </div>
 
-                <div className="primarySellerCard">
+                <div key="sellerInfo" className="primarySellerCard">
                   <div className="header ellipsis">{item.name}</div>
                   <div>
                     <i className="ri-barcode-box-fill"></i>

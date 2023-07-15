@@ -4,3 +4,168 @@
     align-items: center;
     gap: 1rem;
 }
+
+.inputType {
+    position: relative;
+    background: #F1F1F1;
+    font-weight: 500;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 7px;
+    width: 13.4rem;
+    min-height: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+    }
+
+    .header {
+        font-weight: 800;
+        letter-spacing: 5px;
+        font-size: .85rem;
+    }
+
+    .info {
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+    button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: .6rem;
+
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        background: #484848;
+        color: white;
+        outline: 0;
+        border: 0;
+        border-radius: 5px;
+        padding: .4rem .8rem;
+        font-size: .9rem;
+        font-weight: 500;
+        font-family: var(--font) !important;
+        letter-spacing: .6px;
+        cursor: pointer;
+
+        i {
+            font-size: 1rem;
+            font-weight: normal !important;
+            color: white;
+        }
+    }
+}
+
+.uiInputCont.addProductCont {
+    padding-top: 2.2rem;
+    width: 15.5rem;
+    height: 8rem + 2rem;
+    // background: red;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    
+    button {
+        background: #484848;
+        color: white;
+        border: 0;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        padding: .8rem 1rem;
+        border-radius: 5px;
+        font-size: .8rem;
+        font-weight: 500;
+        letter-spacing: .8px;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        
+
+        i {
+            font-weight: normal;
+            font-size: 1rem;
+            color: white;
+        }
+    }
+
+    button.expButton {
+        background: #F1F1F1;
+        color: #484848;
+        border: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        padding: .8rem 1rem;
+        border-radius: 7px;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: .5px;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        
+
+        i {
+            font-weight: normal;
+            font-size: 3rem;
+            color: #484848;
+        }
+
+        &:hover {
+            background: #484848;
+            color: white;
+            font-weight: 500;
+
+            i {
+                color: white;
+            }
+        }
+    }
+}
+
+
+.uiInputCont.validationError {
+    width: 15.4rem;
+    .errorHeader {
+        background: #FFD6D6;
+        padding: .3rem .5rem;
+        color: #AC4242;
+        display: flex;
+        align-items: center;
+
+        gap: .5rem;
+        border-radius: 7px;
+        font-weight: 600;
+        font-size: .85rem;
+        i {
+            font-size: 1.2rem;
+            color: currentColor;
+        }
+    }
+
+    .errors {
+        display: flex;
+        flex-direction: column;
+        max-height: 8rem;
+        overflow-y: auto;
+        padding: 0rem .6rem;
+        font-weight: 600;
+        font-size: .85rem;
+        gap: .5rem;
+    }
+    
+}

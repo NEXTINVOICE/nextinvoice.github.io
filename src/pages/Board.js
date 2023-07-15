@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { save } from "../operations/localProfile";
 import "./board.scss";
 import TipCard from "./boardcomponents/TipCard";
 
@@ -38,7 +39,15 @@ export default function Board() {
             type="alert"
             msg="Some changes are made with sellers. Kindly save your profile. Otherwise changes will not be added in next login"
           >
-            <div className="tipBtn">Save</div>
+            <div
+              className="tipBtn"
+              onClick={() => {
+                save(sellers, profile.user);
+                setRequiresSave(false);
+              }}
+            >
+              Save
+            </div>
           </TipCard>
         )}
 

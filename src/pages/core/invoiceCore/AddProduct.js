@@ -49,6 +49,105 @@ export default function AddProduct() {
   };
 
   return (
+    <>
+      <div className="sectionHeaderWrapper extraMargin">
+        <div className="sectionHeader box">Add Product</div>
+      </div>
+      <div className="inputSets">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="item_name">Item Name</label>
+          </div>
+          <input
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            name="item_name"
+            id="item_name"
+          ></input>
+        </div>
+
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="item_quantity">Quantity</label>
+          </div>
+          <input
+            value={qty}
+            onChange={(e) => {
+              if (e.target.value === "0") return;
+              setQty(e.target.value);
+            }}
+            type="text"
+            name="item_quantity"
+            id="item_quantity"
+          ></input>
+        </div>
+
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label htmlFor="item_amount">Amount</label>
+          </div>
+          <input
+            value={amount}
+            onChange={(e) => {
+              setAmount(e.target.value);
+            }}
+            type="text"
+            name="item_amount"
+            id="item_amount"
+          ></input>
+        </div>
+      </div>
+
+      <div className="inputSets">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label onClick={() => setShowHsnModal(true)} htmlFor="">
+              Item Type
+            </label>
+          </div>
+          <div className="inputType">
+            <div>
+              <div className="header">HSN</div>
+              <div className="info">{hsn ? hsn : "N/A"}</div>
+            </div>
+
+            <div>
+              <div className="header">GST</div>
+              <div className="info">{gst}</div>
+            </div>
+
+            <button onClick={() => setShowHsnModal(true)}>
+              <i className="ri-edit-box-line"></i>
+              Edit
+            </button>
+          </div>
+        </div>
+        {validations.length > 0 && (
+          <div className="uiInputCont validationError">
+            <div className="errorHeader">
+              <i className="ri-error-warning-line"></i>
+              Missing fields
+            </div>
+            <div className="errors">
+              {validations.map((item, index) => (
+                <div key={index}>{item}</div>
+              ))}
+            </div>
+          </div>
+        )}
+        <div className="uiInputCont addProductCont">
+          <button onClick={() => doAddItem()} className="expButton">
+            {/* <i className="ri-play-list-add-line"></i> */}
+            <i className="ri-add-fill"></i>
+            Add Product
+          </button>
+        </div>
+      </div>
+    </>
+  );
+
+  return (
     <div>
       <h3>Add Product</h3>
       <div className="inputSets">

@@ -9,6 +9,13 @@ export default function ProductList({
   showEditProductModal,
 }) {
   const products = useSelector((store) => store.products);
+
+  return (
+    <>
+      <AddProduct />
+    </>
+  );
+
   return (
     <div className="productList" style={{ border: "1px solid black" }}>
       <h2>Products</h2>

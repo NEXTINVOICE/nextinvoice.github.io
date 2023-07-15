@@ -8,10 +8,12 @@ export default function Invoice() {
   const invoice = useSelector((store) => store.invoice);
 
   return (
-    <div style={{ border: "1px solid black" }}>
-      <h2>Invoice Preferences</h2>
-      <div>
-        <p>Invoice Date</p>
+    <div className="inputSets">
+      <div className="uiInputCont">
+        <div className="inputTopBar">
+          <label htmlFor="invoice_date">Invoice Date</label>
+        </div>
+
         <input
           onChange={(e) => {
             let data = {
@@ -28,6 +30,8 @@ export default function Invoice() {
           }}
           type="date"
           value={invoice.invoiceDate}
+          name="invoice_date"
+          id="invoice_date"
         ></input>
       </div>
     </div>
