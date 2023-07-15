@@ -11,7 +11,7 @@ export default function HsnModal({ show, setMainHsn, setMainGst, mainHsn, mainGs
   const [coreHsn, setCoreHsn] = useState(() => mainHsn);
   const [coreGst, setCoreGst] = useState(() => mainGst);
 
-  const [showManualInputs, setShowManualInputs] = useState(false);
+  const [showManualInputs, setShowManualInputs] = useState(true);
 
   return (
     <div className="modal hsn">
