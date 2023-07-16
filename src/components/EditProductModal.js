@@ -183,6 +183,8 @@ export default function EditProductModal({ index, show }) {
             show={setShowHsnModal}
             setMainHsn={setHsn}
             setMainGst={setGst}
+            mainHsn={hsn}
+            mainGst={gst}
           />
         )}
       </div>
