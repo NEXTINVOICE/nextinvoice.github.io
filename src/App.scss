@@ -32,4 +32,22 @@
             width: calc(100% - 4rem);
         }
     }
+
+    .modal-cont.edit-modal {
+        padding-bottom: 2rem !important;
+        height: auto;
+
+        .inputSets {
+            margin-top: 0rem !important;
+        }
+
+        .bottomCont {
+            position: absolute;
+            bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            width: calc(100% - 4rem);
+        }
+    }
 }
