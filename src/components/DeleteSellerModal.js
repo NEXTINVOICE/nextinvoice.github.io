@@ -32,7 +32,6 @@ export default function DeleteSellerModal({ index, show }) {
             className="uiColoredIcoBtn"
             onClick={() => {
               doDeleteSeller();
-              show(false);
             }}
           >
             Delete
