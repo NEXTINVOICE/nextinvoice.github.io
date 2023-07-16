@@ -19,7 +19,7 @@ export default function EditProductModal({ index, show }) {
   const [validations, setValidations] = useState([]);
 
   const doEditProduct = () => {
-    console.log(hsn);
+    // console.log(hsn);
     const data = {
       name: name,
       hsn: hsn,
@@ -28,6 +28,8 @@ export default function EditProductModal({ index, show }) {
       amount: amount,
     };
     const retValidations = productValidator(data);
+    console.log(data);
+    console.log(retValidations);
     setValidations(retValidations);
 
     if (retValidations.length > 0) return;
@@ -49,28 +51,37 @@ export default function EditProductModal({ index, show }) {
 
   return (
     <div className="modal">
-      <div className="modal-cont">
-        <h2>Edit Product</h2>
+      <div className="modal-cont edit-modal">
+        <div
+          className="closeBtn"
+          onClick={() => {
+            show(false);
+          }}
+        >
+          <i className="ri-close-line"></i>
+        </div>
+        <div className="modalHeader">
+          <div className="title">Edit Product</div>
+        </div>
+
         <div className="inputSets">
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            name="name"
-            placeholder="Item name"
-          ></input>
-          <div>
-            <div>
-              <b>Item type</b>
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="product_edit_name">Item Name</label>
             </div>
-            <div>HSN: {hsn ? hsn : "N/A"} </div>
-            <div>GST: {gst}</div>
-            <button onClick={() => setShowHsnModal(true)}>Set Gst</button>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              name="product_edit_name"
+              id="product_edit_name"
+            ></input>
           </div>
 
-          <div>
-            <label htmlFor="quantityInput">Quantity</label>
-            <br></br>
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="product_edit_quantity">Quantity</label>
+            </div>
             <input
               value={qty}
               onChange={(e) => {
@@ -80,48 +91,100 @@ export default function EditProductModal({ index, show }) {
               type="number"
               placeholder="enter quantity"
               min="1"
-              name="quantityInput"
+              name="product_edit_quantity"
+              id="product_edit_quantity"
             ></input>
           </div>
 
-          <div>
-            <label htmlFor="amountInput">Item Amount</label>
-            <br></br>
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label htmlFor="product_edit_amount">Item Amount</label>
+            </div>
             <input
               value={amount}
               onChange={(e) => {
                 setAmount(e.target.value);
               }}
               type="number"
-              placeholder="enter amount"
-              name="amountInput"
+              name="product_edit_amount"
+              id="product_edit_amount"
             ></input>
           </div>
-
-          {validations.map((item, index) => (
-            <div key={index}>{item}</div>
-          ))}
-
-          {showHsnModal && (
-            <HsnModal
-              show={setShowHsnModal}
-              setMainHsn={setHsn}
-              setMainGst={setGst}
-            />
-          )}
-
-          {/* <HsnSelector /> */}
         </div>
 
-        <button onClick={() => doEditProduct()}>Apply</button>
-        <button onClick={() => resetValues()}>Reset</button>
-        <button
-          onClick={() => {
-            show(false);
-          }}
-        >
-          Cancel
-        </button>
+        <div className="inputSets">
+          <div className="uiInputCont">
+            <div className="inputTopBar">
+              <label onClick={() => setShowHsnModal(true)} htmlFor="">
+                Item Type
+              </label>
+            </div>
+            <div className="inputType">
+              <div>
+                <div className="header">HSN</div>
+                <div className="info">{hsn ? hsn : "N/A"}</div>
+              </div>
+
+              <div>
+                <div className="header">GST</div>
+                <div className="info">{gst}</div>
+              </div>
+
+              <button onClick={() => setShowHsnModal(true)}>
+                <i className="ri-edit-box-line"></i>
+                Edit
+              </button>
+            </div>
+          </div>
+          {validations.length > 0 && (
+            <div className="uiInputCont validationError">
+              <div className="errorHeader">
+                <i className="ri-error-warning-line"></i>
+                Missing fields
+              </div>
+              <div className="errors">
+                {validations.map((item, index) => (
+                  <div key={index}>{item}</div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="bottomCont">
+          <button
+            className="uiColoredIcoBtn green"
+            onClick={() => {
+              resetValues(false);
+            }}
+          >
+            Reset
+          </button>
+          <button
+            className="uiColoredIcoBtn"
+            onClick={() => {
+              doEditProduct();
+            }}
+          >
+            Apply
+          </button>
+          <button
+            className="uiColoredIcoBtn red"
+            onClick={() => {
+              show(false);
+            }}
+          >
+            Close
+          </button>
+        </div>
+
+        {showHsnModal && (
+          <HsnModal
+            show={setShowHsnModal}
+            setMainHsn={setHsn}
+            setMainGst={setGst}
+          />
+        )}
       </div>
     </div>
   );
