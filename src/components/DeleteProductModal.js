@@ -12,18 +12,38 @@ export default function DeleteProductModal({ index, show }) {
 
   return (
     <div className="modal">
-      <div className="modal-cont">
-        <h2>Want to delete this item?</h2>
-        <p>This can't be undone.</p>
-        <button onClick={() => doDeleteProduct()}>Delete</button>
-
-        <button
+      <div className="modal-cont action-modal">
+        <div
+          className="closeBtn"
           onClick={() => {
             show(false);
           }}
         >
-          Cancel
-        </button>
+          <i className="ri-close-line"></i>
+        </div>
+        <div className="modalHeader">
+          <div className="title">Delete Product</div>
+        </div>
+
+        <div className="bottomCont">
+          <button
+            className="uiColoredIcoBtn"
+            onClick={() => {
+              doDeleteProduct();
+              show(false);
+            }}
+          >
+            Delete
+          </button>
+          <button
+            className="uiColoredIcoBtn red"
+            onClick={() => {
+              show(false);
+            }}
+          >
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );
