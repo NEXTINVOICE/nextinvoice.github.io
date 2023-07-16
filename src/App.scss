@@ -17,4 +17,19 @@
         border-radius: 10px;
         padding: 1rem;
     }
+
+    .modal-cont.action-modal {
+        padding-bottom: 2rem !important;
+        height: auto;
+        min-width: 27rem !important;
+
+        .bottomCont {
+            position: absolute;
+            bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            width: calc(100% - 4rem);
+        }
+    }
 }
