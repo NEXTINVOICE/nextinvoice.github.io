@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setOffset } from "../../../operations/dateUtils";
 import { setAmount } from "../../../redux/slicers/amount";
 import { setInvoice } from "../../../redux/slicers/invoice";
+import CustomGridSelect from "../../../components/customComponent/CustomGridSelect";
 
 export default function Billing() {
   const invoice = useSelector((store) => store.invoice);
@@ -90,6 +91,18 @@ export default function Billing() {
             name="amountPaid"
           ></input>
         </div>
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label>Payment Type</label>
+          </div>
+          <CustomGridSelect
+            values={paymentTypes}
+            selected={amount.paymentType}
+            onChange={(value) => {
+              dispatch(setAmount({ paymentType: value }));
+            }}
+          />
+        </div>
       </div>
       <div>
         <div>
@@ -122,18 +135,6 @@ export default function Billing() {
             min={setOffset(invoice.invoiceDate)}
           ></input>
         </div>
-      </div>
-
-      <div>
-        <p>Payment type</p>
-        <select
-          value={amount.paymentType}
-          onChange={(e) => dispatch(setAmount({ paymentType: e.target.value }))}
-        >
-          {paymentTypes.map((item, key) => (
-            <option key={key}>{item}</option>
-          ))}
-        </select>
       </div>
     </div>
   );
