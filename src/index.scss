@@ -135,9 +135,25 @@ html * {
     .inputTopBar {
         font-weight: 600;
         font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
 
         label {
             cursor: pointer;
+        }
+
+        // Extra deviation
+        .actionable {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+
+            .actionableTitle {
+                font-size: .8rem;
+                cursor: pointer;
+            }
+
+
         }
     }
 
@@ -313,6 +329,24 @@ html * {
     }
 
 }
+
+
+.uiToggleSwitcher.mini {
+    min-width: 1.8rem;
+    height: 1rem;
+
+    &::after {
+        width: .62rem;
+        height: .62rem;
+    }
+
+    &.selected{
+        &::after{
+            left: 1.22rem !important;
+        }
+    }
+}
+
 
 .uiToggleSwitcher.disabled {
     opacity: .5;

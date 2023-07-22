@@ -36,9 +36,61 @@ export default function Billing() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
 
+  const toggleFullyPaid = () => {
+    dispatch(
+      setAmount({
+        fullyPaid: !amount.fullyPaid,
+        totalAmountPaid: !amount.fullyPaid
+          ? amount.totalAmount
+          : amount.totalAmountPaid,
+      })
+    );
+  };
+
   return (
-    <div style={{ border: "1px solid black" }}>
-      <h2>Billing</h2>
+    <div>
+      <div className="sectionHeaderWrapper">
+        <div className="sectionHeader">Billing</div>
+      </div>
+      <div className="inputSets">
+        <div className="uiInputCont">
+          <div className="inputTopBar">
+            <label
+              className={amount.fullyPaid && "disabled"}
+              htmlFor="amountPaid"
+            >
+              Amount Paid
+            </label>
+
+            <div className="actionable">
+              <div className="actionableTitle" onClick={toggleFullyPaid}>
+                Fully Paid
+              </div>
+              <div
+                onClick={toggleFullyPaid}
+                className={`uiToggleSwitcher mini ${
+                  amount.fullyPaid && "selected"
+                }`}
+              ></div>
+            </div>
+          </div>
+          <input
+            className={amount.fullyPaid && "disabled"}
+            value={amount.totalAmountPaid.toString()}
+            onChange={(e) => {
+              let currAmount = parseInt(e.target.value);
+
+              if (currAmount > amount.totalAmount)
+                currAmount = amount.totalAmount;
+              dispatch(setAmount({ totalAmountPaid: currAmount }));
+            }}
+            max={amount.totalAmount}
+            id="amountPaid"
+            type="number"
+            name="amountPaid"
+          ></input>
+        </div>
+      </div>
       <div>
         <div>
           <b>Item Total:</b>
@@ -58,44 +110,7 @@ export default function Billing() {
         </div>
       </div>
 
-      <div>
-        <input
-          name="fullyPaid"
-          id="fullyPaid"
-          type="checkbox"
-          value={amount.fullyPaid}
-          checked={amount.fullyPaid}
-          onChange={() =>
-            dispatch(
-              setAmount({
-                fullyPaid: !amount.fullyPaid,
-                totalAmountPaid: !amount.fullyPaid
-                  ? amount.totalAmount
-                  : amount.totalAmountPaid,
-              })
-            )
-          }
-        ></input>
-        <label htmlFor="includeInvoiceDueDate">Fully paid</label>
-      </div>
-
       <div className={`${amount.fullyPaid && "disabled"}`}>
-        <label htmlFor="amountPaid">Amount Paid</label>
-        <br></br>
-        <input
-          value={amount.totalAmountPaid.toString()}
-          onChange={(e) => {
-            let currAmount = parseInt(e.target.value);
-
-            if (currAmount > amount.totalAmount)
-              currAmount = amount.totalAmount;
-            dispatch(setAmount({ totalAmountPaid: currAmount }));
-          }}
-          max={amount.totalAmount}
-          id="amountPaid"
-          type="number"
-          name="amountPaid"
-        ></input>
         <div>
           <p>Due Date</p>
           <input
