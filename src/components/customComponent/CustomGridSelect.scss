@@ -1,0 +1,25 @@
+div[type="customSelectInput"] {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    
+    & > * {
+        background: var(--input-background);
+        padding: .5rem 1rem;
+        font-weight: 600;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: color 200ms, background 200ms;
+
+        &.selected {
+            pointer-events: none;
+            background: var(--btn-bg);
+            color: var(--background);
+        }
+
+        &:hover {
+            background: var(--foreground);
+            color: var(--background);
+        }
+    }
+}
