@@ -79,6 +79,10 @@ export default function Billing() {
             className={amount.fullyPaid && "disabled"}
             value={amount.totalAmountPaid.toString()}
             onChange={(e) => {
+              if (amount.fullyPaid) {
+                return;
+              }
+
               let currAmount = parseInt(e.target.value);
 
               if (currAmount > amount.totalAmount)
@@ -99,6 +103,10 @@ export default function Billing() {
 
           <input
             onChange={(e) => {
+              if (amount.fullyPaid) {
+                return;
+              }
+              
               dispatch(setInvoice({ invoiceDueDate: e.target.value }));
             }}
             name="invoice_due_date"
