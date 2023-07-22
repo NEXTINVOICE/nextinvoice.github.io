@@ -4,8 +4,11 @@ div[type="customSelectInput"] {
     flex-wrap: wrap;
     
     & > * {
+        display: grid;
+        place-content: center;
         background: var(--input-background);
-        padding: .5rem 1rem;
+        min-width: 4rem;
+        padding: .7rem 1rem;
         font-weight: 600;
         border-radius: 4px;
         cursor: pointer;
