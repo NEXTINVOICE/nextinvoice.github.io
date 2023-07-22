@@ -36,10 +36,10 @@ export default function ProductList({
                   <td>{item.name}</td>
                   <td>{isNaN(item.hsn) ? "N/A" : item.hsn}</td>
                   <td>{item.qty}</td>
-                  <td>{item.gst}</td>
-                  <td>{item.gstAmount}</td>
-                  <td>{item.amount}</td>
-                  <td>{item.total}</td>
+                  <td>{item.gst}%</td>
+                  <td>{item.gstAmount.toLocaleString()}</td>
+                  <td>{item.amount.toLocaleString()}</td>
+                  <td>{item.total.toLocaleString()}</td>
                   <td>
                     <button
                       onClick={() => {
