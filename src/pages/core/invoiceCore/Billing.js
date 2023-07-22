@@ -106,7 +106,7 @@ export default function Billing() {
               if (amount.fullyPaid) {
                 return;
               }
-              
+
               dispatch(setInvoice({ invoiceDueDate: e.target.value }));
             }}
             name="invoice_due_date"
@@ -131,7 +131,28 @@ export default function Billing() {
         </div>
       </div>
 
-      <div>
+      <div className="sectionHeaderWrapper">
+        <div className="sectionHeader">Final</div>
+      </div>
+
+      <div className="finalBarCont">
+        <div className="finalBar">
+          <div className="title">Item Total</div>
+          <div className="totalAmount">{`${amount.itemAmount.toLocaleString()}`}</div>
+        </div>
+
+        <div className="finalBar">
+          <div className="title">GST</div>
+          <div className="totalAmount">{`${amount.taxAmount.toLocaleString()}`}</div>
+        </div>
+
+        <div className="finalBar">
+          <div className="title">Grand Total</div>
+          <div className="totalAmount">{`${amount.totalAmount.toLocaleString()}`}</div>
+        </div>
+      </div>
+
+      {/* <div>
         <div>
           <b>Item Total:</b>
           {amount.itemAmount}
@@ -148,9 +169,9 @@ export default function Billing() {
           <b>Grand Total:</b>
           {amount.totalAmount}
         </div>
-      </div>
+      </div> */}
 
-
+      <div style={{ height: "5rem" }}></div>
     </div>
   );
 }
