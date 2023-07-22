@@ -91,6 +91,24 @@ export default function Billing() {
             name="amountPaid"
           ></input>
         </div>
+
+        <div className={`uiInputCont ${amount.fullyPaid && "disabled"}`}>
+          <div className="inputTopBar">
+            <label htmlFor="invoice_due_date">Due Date</label>
+          </div>
+
+          <input
+            onChange={(e) => {
+              dispatch(setInvoice({ invoiceDueDate: e.target.value }));
+            }}
+            name="invoice_due_date"
+            id="invoice_due_date"
+            type="date"
+            value={invoice.invoiceDueDate}
+            min={setOffset(invoice.invoiceDate)}
+          ></input>
+        </div>
+
         <div className="uiInputCont">
           <div className="inputTopBar">
             <label>Payment Type</label>
@@ -104,6 +122,7 @@ export default function Billing() {
           />
         </div>
       </div>
+
       <div>
         <div>
           <b>Item Total:</b>
@@ -123,19 +142,7 @@ export default function Billing() {
         </div>
       </div>
 
-      <div className={`${amount.fullyPaid && "disabled"}`}>
-        <div>
-          <p>Due Date</p>
-          <input
-            onChange={(e) => {
-              dispatch(setInvoice({ invoiceDueDate: e.target.value }));
-            }}
-            type="date"
-            value={invoice.invoiceDueDate}
-            min={setOffset(invoice.invoiceDate)}
-          ></input>
-        </div>
-      </div>
+
     </div>
   );
 }
