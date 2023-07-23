@@ -250,9 +250,7 @@ export default function CreateSeller() {
             onClick={() => {
               setIncludeBankDetails(!includeBankDetails);
             }}
-            className={`uiToggleSwitcher ${includeBankDetails && "selected"} ${
-              sellers.length === 1 && "disabled"
-            }`}
+            className={`uiToggleSwitcher ${includeBankDetails && "selected"}`}
           ></div>
         </div>
 
@@ -351,7 +349,7 @@ export default function CreateSeller() {
             }}
             className={`uiToggleSwitcher ${
               includeTermsAndConditions && "selected"
-            } ${sellers.length === 1 && "disabled"}`}
+            }`}
           ></div>
         </div>
 
