@@ -80,7 +80,7 @@ export default function CreateInvoice() {
         <div className="sectionHeaderWrapper">
           <div className="sectionHeader">Current Seller</div>
         </div>
-        <SellerSelector show={showSetSellerModal} />
+        <SellerSelector show={setShowSetSellerModal} />
 
         <div className="sectionHeaderWrapper extraMargin">
           <div className="sectionHeader box">Invoice Preferences</div>
