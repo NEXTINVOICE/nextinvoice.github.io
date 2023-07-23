@@ -232,6 +232,20 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
                     </div>
                   </>
                 )}
+
+              {sellers[invoiceSeller].includeTermsAndConditions && (
+                <div className="termsAndConditionsNew">
+                  <div style={accText} className="header">
+                    Terms and Conditions
+                  </div>
+                  <div className="value">
+                    {sellers[invoiceSeller].termsAndConditions}
+                    {/* 1. Please pay within 15 days from the date of invoice, overdue
+                  interest @ 14% will be charged on delayed payments. <br></br>
+                  2. Please quote invoice number when remitting funds. */}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="billingInfo">
@@ -282,21 +296,6 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
               </div>
             </div>
           </div>
-          {sellers[invoiceSeller].includeTermsAndConditions && (
-            <div className="termsAndConditions">
-              <div>
-                <div style={accText} className="header">
-                  Terms and Conditions
-                </div>
-                <div className="value">
-                  {sellers[invoiceSeller].termsAndConditions}
-                  {/* 1. Please pay within 15 days from the date of invoice, overdue
-                  interest @ 14% will be charged on delayed payments. <br></br>
-                  2. Please quote invoice number when remitting funds. */}
-                </div>
-              </div>
-            </div>
-          )}
           {sellers[invoiceSeller].generateQr && (
             <div className="nextInvQRCont">
               <div className="wrapper">

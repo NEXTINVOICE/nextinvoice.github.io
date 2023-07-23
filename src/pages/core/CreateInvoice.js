@@ -110,6 +110,12 @@ export default function CreateInvoice() {
         >
           <i className="ri-restart-fill"></i>Reset
         </button>
+        <button
+          className="uiColoredIcoBtn green"
+          onClick={() => navigate("/dashboard/invoice/preview")}
+        >
+          Preview/DEV
+        </button>
         {validation.length > 0 && (
           <button
             className="uiColoredSpecBtn validationBtn"

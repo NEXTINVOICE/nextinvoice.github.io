@@ -12,6 +12,7 @@ import EditSeller from "./pages/core/EditSeller";
 import CreateInvoice from "./pages/core/CreateInvoice";
 import TypeA from "./pages/core/invoiceCore/templates/invoice/TypeA";
 import TemplateHandler from "./pages/core/invoiceCore/TemplateHandler";
+import TemplatePreview from "./pages/core/invoiceCore/TemplatePreview";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="sellers" element={<Sellers />} />
             <Route path="invoice/create" element={<CreateInvoice />} />
             <Route path="invoice/generate" element={<TemplateHandler />} />
+            <Route path="invoice/preview" element={<TemplatePreview />} />
           </Route>
         </Routes>
       </Router>
