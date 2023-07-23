@@ -127,7 +127,7 @@ export default function EditProductModal({ index, show }) {
 
               <div>
                 <div className="header">GST</div>
-                <div className="info">{gst}</div>
+                <div className="info">{gst}%</div>
               </div>
 
               <button onClick={() => setShowHsnModal(true)}>

@@ -35,8 +35,8 @@ export const customerNormalizer = (data) => {
 export const productNormalizer = (data) => {
   data.name = data.name.trim();
   data.hsn = parseInt(data.hsn?.trim());
-  data.gst = parseInt(data.gst.trim());
+  data.gst = parseFloat(data.gst.trim());
   data.qty = parseInt(data.qty.trim());
-  data.amount = parseInt(data.amount.trim());
+  data.amount = parseFloat(data.amount.trim());
   return data;
 };

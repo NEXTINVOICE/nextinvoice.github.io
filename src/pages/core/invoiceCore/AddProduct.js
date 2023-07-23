@@ -114,7 +114,7 @@ export default function AddProduct() {
 
             <div>
               <div className="header">GST</div>
-              <div className="info">{gst}</div>
+              <div className="info">{gst}%</div>
             </div>
 
             <button onClick={() => setShowHsnModal(true)}>
