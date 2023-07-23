@@ -33,6 +33,10 @@ export default function Billing() {
       data.totalAmountPaid = data.totalAmount;
     }
 
+    if (amount.totalAmountPaid > data.totalAmount) {
+      data.totalAmountPaid = data.totalAmount;
+    }
+
     dispatch(setAmount(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [products]);
