@@ -294,7 +294,11 @@ export default function EditSeller() {
             </div>
             <input
               value={accountHolderName}
-              onChange={(e) => setAccountHolderName(e.target.value)}
+              onChange={
+                !includeBankDetails
+                  ? () => {}
+                  : (e) => setAccountHolderName(e.target.value)
+              }
               type="text"
               name="accountHolderName"
               id="accountHolderName"
@@ -307,7 +311,11 @@ export default function EditSeller() {
             </div>
             <input
               value={accountNumber}
-              onChange={(e) => setAccountNumber(e.target.value)}
+              onChange={
+                !includeBankDetails
+                  ? () => {}
+                  : (e) => setAccountNumber(e.target.value)
+              }
               type="text"
               name="accountNumber"
               id="accountNumber"
@@ -320,7 +328,11 @@ export default function EditSeller() {
             </div>
             <input
               value={bankName}
-              onChange={(e) => setBankName(e.target.value)}
+              onChange={
+                !includeBankDetails
+                  ? () => {}
+                  : (e) => setBankName(e.target.value)
+              }
               type="text"
               name="bankName"
               id="bankName"
@@ -333,7 +345,11 @@ export default function EditSeller() {
             </div>
             <input
               value={bankBranch}
-              onChange={(e) => setBankBranch(e.target.value)}
+              onChange={
+                !includeBankDetails
+                  ? () => {}
+                  : (e) => setBankBranch(e.target.value)
+              }
               type="text"
               name="bankBranch"
               id="bankBranch"
@@ -346,7 +362,11 @@ export default function EditSeller() {
             </div>
             <input
               value={bankIFSC}
-              onChange={(e) => setBankIFSC(e.target.value)}
+              onChange={
+                !includeBankDetails
+                  ? () => {}
+                  : (e) => setBankIFSC(e.target.value)
+              }
               type="text"
               name="bankIFSC"
               id="bankIFSC"
@@ -377,7 +397,11 @@ export default function EditSeller() {
               placeholder="Write Something"
               className="customScroll"
               value={termsAndConditions}
-              onChange={(e) => setTermsAndConditions(e.target.value)}
+              onChange={
+                !includeTermsAndConditions
+                  ? () => {}
+                  : (e) => setTermsAndConditions(e.target.value)
+              }
               type="text"
               name="termsAndConditions"
               id="termsAndConditions"
