@@ -425,9 +425,31 @@ html * {
     padding: 0rem;
     padding-right: 1rem;
 
-    div {
+    & > div:not(.specActionableIcon) {
         border-radius: 5px;
         color: #AC4242;
+    }
+
+    .specActionableIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .rIco {
+            display: none;
+            background: #FFE5DD;
+            color: #BD5434;
+        }
+
+        &:hover {
+            .sIco {
+                display: none;
+            }
+
+            .rIco {
+                display: block;
+            }
+        }
     }
 
     i {
@@ -436,7 +458,7 @@ html * {
         border-radius: 100px;
         font-size: 2rem;
         font-weight: normal;
-        padding: .22rem;
+        padding: .2rem;
         outline: 4px solid white;
     }
 }

@@ -52,7 +52,7 @@ export default function CreateInvoice() {
     );
   }
 
-  const generateInvoice = () => {
+  const runValidation = () => {
     const validationResults = customerValidator(customer);
     const normalizedCustomerData = customerNormalizer(customer);
     dispatch(setCustomer(normalizedCustomerData));
@@ -62,9 +62,12 @@ export default function CreateInvoice() {
     }
 
     setValidation(validationResults);
-    if (validationResults.length > 0) return;
+    return validationResults.length > 0 ? false : true;
+  }
 
-    navigate("/dashboard/invoice/generate");
+  const generateInvoice = () => {
+    if (runValidation())
+      navigate("/dashboard/invoice/generate");
   };
 
   return (
@@ -119,7 +122,10 @@ export default function CreateInvoice() {
               setShowValidationBox={setShowValidationBox}
               validation={validation}
             />
-            <i className="ri-error-warning-line"></i>
+            <div className="specActionableIcon">
+              <i className="ri-error-warning-line sIco"></i>
+              <i className="ri-restart-fill rIco" onClick={runValidation}></i>
+            </div>
             <div>Validation Error</div>
           </button>
         )}
