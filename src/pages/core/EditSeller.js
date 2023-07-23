@@ -71,7 +71,8 @@ export default function EditSeller() {
   const [showAccentType, setShowAccentType] = useState(false);
   const [showInvoiceTypeModal, setShowInvoiceTypeModal] = useState(false);
   const [showValidationBox, setShowValidationBox] = useState(false);
-  const doEditSeller = () => {
+
+  const runValidation = () => {
     const data = {
       name,
       address,
@@ -108,15 +109,23 @@ export default function EditSeller() {
     const retValidation = sellerValidator(data);
     setValidation(retValidation);
 
-    if (retValidation.length > 0) return;
+    if (retValidation.length > 0) return false;
 
     if (sellerExists) {
       setValidation(["Seller exists. Try different name."]);
+      return false;
+    }
+
+    return data;
+  };
+
+  const doEditSeller = () => {
+    const data = runValidation();
+    if (data === false) {
       return;
     }
 
     const normalizedData = sellerNormalizer(data);
-
     dispatch(replaceSeller({ name: seller.name, data: normalizedData }));
     dispatch(resetSeller());
     navigate(-1, { replace: true });
@@ -533,7 +542,10 @@ export default function EditSeller() {
               setShowValidationBox={setShowValidationBox}
               validation={validation}
             />
-            <i className="ri-error-warning-line"></i>
+            <div className="specActionableIcon">
+              <i className="ri-error-warning-line sIco"></i>
+              <i className="ri-restart-fill rIco" onClick={runValidation}></i>
+            </div>
             <div>Validation Error</div>
           </button>
         )}
