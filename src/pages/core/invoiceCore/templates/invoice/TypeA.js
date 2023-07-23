@@ -162,9 +162,9 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
               <div style={tableHeadertext} className="item">
                 GST
               </div>
-              <div style={tableHeadertext} className="item">
-                CSGST
-              </div>
+              {/* <div style={tableHeadertext} className="item">
+                GST
+              </div> */}
               <div style={tableHeadertext} className="item">
                 Amount
               </div>
@@ -182,10 +182,10 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
                 </div>
                 <div className="item">{isNaN(item.hsn) ? "N/A" : item.hsn}</div>
                 <div className="item">{item.gst}%</div>
-                <div className="item">{item.gstAmount / 2}</div>
-                <div className="item">{item.amount}</div>
+                {/* <div className="item">{item.gstAmount / 2}</div> */}
+                <div className="item">{item.amount.toLocaleString()}</div>
                 <div className="item">{item.qty}</div>
-                <div className="item">{item.total}</div>
+                <div className="item">{item.total.toLocaleString()}</div>
               </div>
             ))}
           </div>
@@ -262,13 +262,23 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
                   )}
                 </div>
                 <div className="column">
-                  <div className="value">{amount.itemAmount}</div>
-                  <div className="value">{amount.taxAmount / 2}</div>
-                  <div className="value">{amount.taxAmount / 2}</div>
+                  <div className="value">
+                    {amount.itemAmount.toLocaleString()}
+                  </div>
+                  <div className="value">
+                    {(amount.taxAmount / 2).toLocaleString()}
+                  </div>
+                  <div className="value">
+                    {(amount.taxAmount / 2).toLocaleString()}
+                  </div>
                   {!amount.fullyPaid && (
                     <>
-                      <div className="value">{amount.totalAmount}</div>
-                      <div className="value">-{amount.totalAmountPaid}</div>
+                      <div className="value">
+                        {amount.totalAmount.toLocaleString()}
+                      </div>
+                      <div className="value">
+                        -{amount.totalAmountPaid.toLocaleString()}
+                      </div>
                     </>
                   )}
                 </div>
@@ -286,10 +296,14 @@ export default function TypeA({ hide, invoiceNumber, isDone, isErr }) {
                 </div>
                 <div className="lCont">
                   {amount.fullyPaid ? (
-                    <div className="value">{amount.totalAmount}</div>
+                    <div className="value">
+                      {amount.totalAmount.toLocaleString()}
+                    </div>
                   ) : (
                     <div className="value">
-                      {amount.totalAmount - amount.totalAmountPaid}
+                      {(
+                        amount.totalAmount - amount.totalAmountPaid
+                      ).toLocaleString()}
                     </div>
                   )}
                 </div>
