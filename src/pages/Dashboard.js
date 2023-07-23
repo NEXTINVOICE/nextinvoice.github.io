@@ -110,6 +110,15 @@ export default function Dashboard() {
             </div>
             <div className="itemName">Create Seller</div>
           </div>
+          <div
+            onClick={() => navigate("/dashboard/invoice/generate")}
+            className={`item`}
+          >
+            <div className="iconCont">
+              {/* <i className="ri-arrow-right-s-line"></i> */}
+            </div>
+            <div className="itemName">Navigate Generate Invoice</div>
+          </div>
         </div>
         {sellers.length !== 0 ? (
           <div

@@ -8,6 +8,8 @@ import { resetSeller } from "../../../redux/slicers/seller";
 import { resetAmount } from "../../../redux/slicers/amount";
 import TypeA from "./templates/invoice/TypeA";
 import { resetProducts } from "../../../redux/slicers/products";
+import heroLogo from "../../../res/logo2.png";
+import "./LoadingPage.scss";
 
 export default function TemplateHandler({ templateNumber = 0 }) {
   const [state, setState] = useState(false);
@@ -110,21 +112,68 @@ export default function TemplateHandler({ templateNumber = 0 }) {
         <TypeA hide={true} invoiceNumber={invoiceNumber} />
       )}
 
-      <div className="progressSection">
-        {!isDone && <div>Please Wait</div>}
+      <div className="loadingPage">
+        <img src={heroLogo} alt="Next invoice" />
 
-        {isDone && !isErr && (
-          <div>
-            Generated{" "}
-            <button onClick={() => createAnotherOne()}>
-              Create Another one
-            </button>
-            <button onClick={() => resetProgress()}>Close</button>
+        {!isDone && (
+          <div className="loadingCont">
+            <div className="title">Generating Invoice</div>
+            <div class="progress-container">
+              <div class="progress-materializecss">
+                <div class="indeterminate"></div>
+              </div>
+            </div>
+            <div className="subtitle">Please wait</div>
           </div>
         )}
+
+        {isDone && !isErr && (
+          <div className="loadingCont">
+            <div className="title">
+              Invoice generated<br></br> successfully
+            </div>
+            <div className="buttonBar">
+              {/* <button className="uiColoredIcoBtn blueDeep">
+                <i className="ri-download-cloud-2-line"></i>Download
+              </button> */}
+
+              <button
+                className="uiColoredIcoBtn blueDeep"
+                onClick={() => createAnotherOne()}
+              >
+                <i className="ri-magic-line"></i>Create Another One
+              </button>
+
+              <button
+                className="uiColoredIcoBtn red"
+                onClick={() => resetProgress()}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
         {isDone && isErr && (
-          <div>
-            Failed <button onClick={() => resetProgress()}>Close</button>
+          <div className="loadingCont">
+            <div className="title">
+              Invoice generation<br></br> <span>Failed</span>
+            </div>
+            <div className="buttonBar">
+              <button
+                className="uiColoredIcoBtn blueDeep"
+                onClick={() => createAnotherOne()}
+              >
+                <i className="ri-magic-line"></i>Try Again
+              </button>
+
+              <button
+                className="uiColoredIcoBtn red"
+                onClick={() => resetProgress()}
+              >
+                Close
+              </button>
+            </div>
           </div>
         )}
       </div>

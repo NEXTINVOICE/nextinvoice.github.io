@@ -398,6 +398,21 @@ html * {
     }
 }
 
+.uiColoredIcoBtn.blueDeep {
+    color: #ffffff;
+    background: #2d93f1;
+}
+
+.uiColoredIcoBtn.blue {
+    font-weight: 600;
+    background: #ddecff;
+    color: #2d93f1;
+
+    i {
+        font-weight: 600;
+    }
+}
+
 .uiColoredIcoBtn.red {
     background: #FFE5DD;
     color: #BD5434;
